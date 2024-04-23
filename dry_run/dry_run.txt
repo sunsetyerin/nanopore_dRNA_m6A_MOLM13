@@ -1,0 +1,545 @@
+Loading and checking configuration file
+Loading and checking sample file
+replicates found: [0, 1, 2, 3]
+condition found: ['control', 'cnot3_test']
+Defining target files
+Defining target files for `quality_control` rules
+Defining target files for `xpore` rules
+Building DAG of jobs...
+Singularity image docker://quay.io/biocontainers/xpore:2.1--pyh5e36f6f_0 will be pulled.
+Singularity image library://aleg/default/f5c:cpu-0.6 will be pulled.
+Singularity image library://aleg/default/pycoqc:2.5.2 will be pulled.
+Singularity image library://aleg/default/metacompore_python:3.8.6 will be pulled.
+Singularity image library://aleg/default/pybiotools:0.2.7 will be pulled.
+Singularity image library://aleg/default/minimap2:2.17 will be pulled.
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+alignmemt_merge             2              1              1
+alignmemt_postfilter        8              1              1
+alignmemt_prefilter         6              1              1
+all                         1              1              1
+min_ref_coverage            1              1              1
+pycoQC                      6              1              1
+xpore_config                1              1              1
+xpore_dataprep              8              1              1
+xpore_diffmod               1              1              1
+xpore_eventalign            8              1              1
+total                      42              1              1
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/alignmemt_prefilter/control_2.bam.bai, results/alignment/alignmemt_prefilter/control_2.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_2.log
+    jobid: 13
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_2.bam.bai, results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/alignmemt_prefilter/control_2.bam.idx.gz; Updated input files: results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule pycoQC:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112875/PAK13513/sequencing_summary.txt, results/alignment/minimap2_align/control_0.bam, results/alignment/minimap2_align/control_0.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_0.json, results/quality_control/pycoQC/pycoQC_control_0.html
+    log: logs/quality_control/pycoQC/control_0.log
+    jobid: 46
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_0.json, results/quality_control/pycoQC/pycoQC_control_0.html
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule pycoQC:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112869/PAM58483/sequencing_summary.txt, results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_2.json, results/quality_control/pycoQC/pycoQC_control_2.html
+    log: logs/quality_control/pycoQC/control_2.log
+    jobid: 48
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_2.html, results/quality_control/pycoQC/pycoQC_control_2.json
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule pycoQC:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112870/PAM58315/sequencing_summary.txt, results/alignment/minimap2_align/cnot3_test_0.bam, results/alignment/minimap2_align/cnot3_test_0.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_cnot3_test_0.json, results/quality_control/pycoQC/pycoQC_cnot3_test_0.html
+    log: logs/quality_control/pycoQC/cnot3_test_0.log
+    jobid: 50
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_cnot3_test_0.html, results/quality_control/pycoQC/pycoQC_cnot3_test_0.json
+    wildcards: cond=cnot3_test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule pycoQC:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112872/PAM58460/sequencing_summary.txt, results/alignment/minimap2_align/control_3.bam, results/alignment/minimap2_align/control_3.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_3.json, results/quality_control/pycoQC/pycoQC_control_3.html
+    log: logs/quality_control/pycoQC/control_3.log
+    jobid: 49
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_3.html, results/quality_control/pycoQC/pycoQC_control_3.json
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_0.bam, results/alignment/minimap2_align/control_0.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/alignmemt_prefilter/control_0.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_0.log
+    jobid: 2
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/alignmemt_prefilter/control_0.bam.idx.gz; Updated input files: results/alignment/minimap2_align/control_0.bam.bai, results/alignment/minimap2_align/control_0.bam
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_3.bam, results/alignment/minimap2_align/control_3.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.bai, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_3.log
+    jobid: 17
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.bai, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz; Updated input files: results/alignment/minimap2_align/control_3.bam, results/alignment/minimap2_align/control_3.bam.bai
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule pycoQC:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112877/PAK30951/sequencing_summary.txt, results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_1.json, results/quality_control/pycoQC/pycoQC_control_1.html
+    log: logs/quality_control/pycoQC/control_1.log
+    jobid: 47
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_1.html, results/quality_control/pycoQC/pycoQC_control_1.json
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/cnot3_test_0.bam, results/alignment/minimap2_align/cnot3_test_0.bam.bai
+    output: results/alignment/alignmemt_prefilter/cnot3_test_0.bam, results/alignment/alignmemt_prefilter/cnot3_test_0.bam.bai, results/alignment/alignmemt_prefilter/cnot3_test_0.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/cnot3_test_0.log
+    jobid: 21
+    reason: Missing output files: results/alignment/alignmemt_prefilter/cnot3_test_0.bam.bai, results/alignment/alignmemt_prefilter/cnot3_test_0.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_0.bam; Updated input files: results/alignment/minimap2_align/cnot3_test_0.bam.bai, results/alignment/minimap2_align/cnot3_test_0.bam
+    wildcards: cond=cnot3_test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_1.bam, results/alignment/alignmemt_prefilter/control_1.bam.bai, results/alignment/alignmemt_prefilter/control_1.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_1.log
+    jobid: 9
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_1.bam.idx.gz, results/alignment/alignmemt_prefilter/control_1.bam, results/alignment/alignmemt_prefilter/control_1.bam.bai; Updated input files: results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule pycoQC:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112871/PAM58713/sequencing_summary.txt, results/alignment/minimap2_align/cnot3_test_1.bam, results/alignment/minimap2_align/cnot3_test_1.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_cnot3_test_1.json, results/quality_control/pycoQC/pycoQC_cnot3_test_1.html
+    log: logs/quality_control/pycoQC/cnot3_test_1.log
+    jobid: 51
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_cnot3_test_1.html, results/quality_control/pycoQC/pycoQC_cnot3_test_1.json
+    wildcards: cond=cnot3_test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/cnot3_test_1.bam, results/alignment/minimap2_align/cnot3_test_1.bam.bai
+    output: results/alignment/alignmemt_prefilter/cnot3_test_1.bam, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.bai, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/cnot3_test_1.log
+    jobid: 25
+    reason: Missing output files: results/alignment/alignmemt_prefilter/cnot3_test_1.bam, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.bai; Updated input files: results/alignment/minimap2_align/cnot3_test_1.bam, results/alignment/minimap2_align/cnot3_test_1.bam.bai
+    wildcards: cond=cnot3_test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+Would remove temporary output results/alignment/minimap2_align/control_2.bam
+Would remove temporary output results/alignment/minimap2_align/control_2.bam.bai
+Would remove temporary output results/alignment/minimap2_align/control_0.bam.bai
+Would remove temporary output results/alignment/minimap2_align/control_0.bam
+Would remove temporary output results/alignment/minimap2_align/control_3.bam
+Would remove temporary output results/alignment/minimap2_align/control_3.bam.bai
+Would remove temporary output results/alignment/minimap2_align/cnot3_test_0.bam.bai
+Would remove temporary output results/alignment/minimap2_align/cnot3_test_0.bam
+Would remove temporary output results/alignment/minimap2_align/control_1.bam
+Would remove temporary output results/alignment/minimap2_align/control_1.bam.bai
+Would remove temporary output results/alignment/minimap2_align/cnot3_test_1.bam
+Would remove temporary output results/alignment/minimap2_align/cnot3_test_1.bam.bai
+
+[Fri Feb 24 17:33:57 2023]
+rule min_ref_coverage:
+    input: results/alignment/alignmemt_prefilter/control_0.bam.idx.gz, results/alignment/alignmemt_prefilter/control_1.bam.idx.gz, results/alignment/alignmemt_prefilter/control_2.bam.idx.gz, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_0.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_2.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_3.bam.idx.gz
+    output: results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    log: logs/alignment/min_ref_coverage/cnot3_out.log
+    jobid: 8
+    reason: Missing output files: results/alignment/min_ref_coverage/cnot3_valid_references_list.txt; Input files updated by another job: results/alignment/alignmemt_prefilter/control_1.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_0.bam.idx.gz, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz, results/alignment/alignmemt_prefilter/control_2.bam.idx.gz, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.idx.gz, results/alignment/alignmemt_prefilter/control_0.bam.idx.gz
+    resources: tmpdir=/tmp, mem_mb=1000
+
+Would remove temporary output results/alignment/alignmemt_prefilter/control_0.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/control_1.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/control_2.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/control_3.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_0.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_1.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_2.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_3.bam.idx.gz
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/cnot3_test_1.bam, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/cnot3_test_1.bam, results/alignment/alignmemt_postfilter/cnot3_test_1.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_1.bam.idx.gz, results/alignment/alignmemt_postfilter/cnot3_test_1_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/cnot3_test_1.log
+    jobid: 41
+    reason: Missing output files: results/alignment/alignmemt_postfilter/cnot3_test_1.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_1.bam; Input files updated by another job: results/alignment/alignmemt_prefilter/cnot3_test_1.bam, results/alignment/alignmemt_prefilter/cnot3_test_1.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    wildcards: cond=cnot3_test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_0.bam.idx.gz, results/alignment/alignmemt_postfilter/control_0_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_0.log
+    jobid: 1
+    reason: Input files updated by another job: results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/cnot3_test_2.bam, results/alignment/alignmemt_prefilter/cnot3_test_2.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/cnot3_test_2.bam, results/alignment/alignmemt_postfilter/cnot3_test_2.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_2.bam.idx.gz, results/alignment/alignmemt_postfilter/cnot3_test_2_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/cnot3_test_2.log
+    jobid: 42
+    reason: Missing output files: results/alignment/alignmemt_postfilter/cnot3_test_2.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_2.bam; Input files updated by another job: results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    wildcards: cond=cnot3_test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/alignmemt_prefilter/control_2.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_2.bam.bai, results/alignment/alignmemt_postfilter/control_2.bam.idx.gz, results/alignment/alignmemt_postfilter/control_2_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_2.log
+    jobid: 38
+    reason: Missing output files: results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_2.bam.bai; Input files updated by another job: results/alignment/alignmemt_prefilter/control_2.bam.bai, results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/cnot3_test_0.bam, results/alignment/alignmemt_prefilter/cnot3_test_0.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/cnot3_test_0.bam, results/alignment/alignmemt_postfilter/cnot3_test_0.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_0.bam.idx.gz, results/alignment/alignmemt_postfilter/cnot3_test_0_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/cnot3_test_0.log
+    jobid: 40
+    reason: Missing output files: results/alignment/alignmemt_postfilter/cnot3_test_0.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_0.bam; Input files updated by another job: results/alignment/alignmemt_prefilter/cnot3_test_0.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt, results/alignment/alignmemt_prefilter/cnot3_test_0.bam
+    wildcards: cond=cnot3_test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/cnot3_test_3.bam, results/alignment/alignmemt_prefilter/cnot3_test_3.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/cnot3_test_3.bam, results/alignment/alignmemt_postfilter/cnot3_test_3.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_3.bam.idx.gz, results/alignment/alignmemt_postfilter/cnot3_test_3_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/cnot3_test_3.log
+    jobid: 43
+    reason: Missing output files: results/alignment/alignmemt_postfilter/cnot3_test_3.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_3.bam; Input files updated by another job: results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    wildcards: cond=cnot3_test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_1.bam, results/alignment/alignmemt_prefilter/control_1.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_1.bam.bai, results/alignment/alignmemt_postfilter/control_1.bam.idx.gz, results/alignment/alignmemt_postfilter/control_1_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_1.log
+    jobid: 37
+    reason: Input files updated by another job: results/alignment/min_ref_coverage/cnot3_valid_references_list.txt, results/alignment/alignmemt_prefilter/control_1.bam, results/alignment/alignmemt_prefilter/control_1.bam.bai
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/control_3.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam.idx.gz, results/alignment/alignmemt_postfilter/control_3_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_3.log
+    jobid: 39
+    reason: Missing output files: results/alignment/alignmemt_postfilter/control_3.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam; Input files updated by another job: results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.bai, results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_1.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_1.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/control_0.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_0.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_2.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_2.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_2.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/control_2.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_0.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_0.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_3.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/cnot3_test_3.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_1.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_1.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/control_3.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_3.bam.bai
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/cnot3_test_0.fastq, results/basecalling/merge_fastq/cnot3_test_0.fastq.index, results/alignment/alignmemt_postfilter/cnot3_test_0.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/cnot3_test_0_data.tsv, results/xpore/xpore_eventalign/cnot3_test_0_summary.tsv
+    log: logs/xpore/xpore_eventalign/cnot3_test_0.log
+    jobid: 69
+    reason: Missing output files: results/xpore/xpore_eventalign/cnot3_test_0_data.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/cnot3_test_0.bam
+    wildcards: cond=cnot3_test, rep=0
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/cnot3_test_1.fastq, results/basecalling/merge_fastq/cnot3_test_1.fastq.index, results/alignment/alignmemt_postfilter/cnot3_test_1.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/cnot3_test_1_data.tsv, results/xpore/xpore_eventalign/cnot3_test_1_summary.tsv
+    log: logs/xpore/xpore_eventalign/cnot3_test_1.log
+    jobid: 72
+    reason: Missing output files: results/xpore/xpore_eventalign/cnot3_test_1_data.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/cnot3_test_1.bam
+    wildcards: cond=cnot3_test, rep=1
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_merge:
+    input: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_1.bam.bai, results/alignment/alignmemt_postfilter/control_2.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam.bai
+    output: results/alignment/alignmemt_merge/control.bam, results/alignment/alignmemt_merge/control.bam.bai
+    log: logs/alignment/alignmemt_merge/control.log
+    jobid: 44
+    reason: Input files updated by another job: results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_3.bam.bai, results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_2.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam.bai
+    wildcards: cond=control
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/control_1.fastq, results/basecalling/merge_fastq/control_1.fastq.index, results/alignment/alignmemt_postfilter/control_1.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/control_1_data.tsv, results/xpore/xpore_eventalign/control_1_summary.tsv
+    log: logs/xpore/xpore_eventalign/control_1.log
+    jobid: 60
+    reason: Input files updated by another job: results/alignment/alignmemt_postfilter/control_1.bam
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/cnot3_test_3.fastq, results/basecalling/merge_fastq/cnot3_test_3.fastq.index, results/alignment/alignmemt_postfilter/cnot3_test_3.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/cnot3_test_3_data.tsv, results/xpore/xpore_eventalign/cnot3_test_3_summary.tsv
+    log: logs/xpore/xpore_eventalign/cnot3_test_3.log
+    jobid: 78
+    reason: Missing output files: results/xpore/xpore_eventalign/cnot3_test_3_data.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/cnot3_test_3.bam
+    wildcards: cond=cnot3_test, rep=3
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/control_3.fastq, results/basecalling/merge_fastq/control_3.fastq.index, results/alignment/alignmemt_postfilter/control_3.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/control_3_data.tsv, results/xpore/xpore_eventalign/control_3_summary.tsv
+    log: logs/xpore/xpore_eventalign/control_3.log
+    jobid: 66
+    reason: Missing output files: results/xpore/xpore_eventalign/control_3_data.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/control_3.bam
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/control_0.fastq, results/basecalling/merge_fastq/control_0.fastq.index, results/alignment/alignmemt_postfilter/control_0.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/control_0_data.tsv, results/xpore/xpore_eventalign/control_0_summary.tsv
+    log: logs/xpore/xpore_eventalign/control_0.log
+    jobid: 57
+    reason: Input files updated by another job: results/alignment/alignmemt_postfilter/control_0.bam
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule alignmemt_merge:
+    input: results/alignment/alignmemt_postfilter/cnot3_test_0.bam, results/alignment/alignmemt_postfilter/cnot3_test_1.bam, results/alignment/alignmemt_postfilter/cnot3_test_2.bam, results/alignment/alignmemt_postfilter/cnot3_test_3.bam, results/alignment/alignmemt_postfilter/cnot3_test_0.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_1.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_2.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_3.bam.bai
+    output: results/alignment/alignmemt_merge/cnot3_test.bam, results/alignment/alignmemt_merge/cnot3_test.bam.bai
+    log: logs/alignment/alignmemt_merge/cnot3_test.log
+    jobid: 45
+    reason: Missing output files: results/alignment/alignmemt_merge/cnot3_test.bam; Input files updated by another job: results/alignment/alignmemt_postfilter/cnot3_test_0.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_2.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_2.bam, results/alignment/alignmemt_postfilter/cnot3_test_3.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_1.bam, results/alignment/alignmemt_postfilter/cnot3_test_1.bam.bai, results/alignment/alignmemt_postfilter/cnot3_test_3.bam, results/alignment/alignmemt_postfilter/cnot3_test_0.bam
+    wildcards: cond=cnot3_test
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/cnot3_test_2.fastq, results/basecalling/merge_fastq/cnot3_test_2.fastq.index, results/alignment/alignmemt_postfilter/cnot3_test_2.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/cnot3_test_2_data.tsv, results/xpore/xpore_eventalign/cnot3_test_2_summary.tsv
+    log: logs/xpore/xpore_eventalign/cnot3_test_2.log
+    jobid: 75
+    reason: Missing output files: results/xpore/xpore_eventalign/cnot3_test_2_data.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/cnot3_test_2.bam
+    wildcards: cond=cnot3_test, rep=2
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_eventalign:
+    input: results/basecalling/merge_fastq/control_2.fastq, results/basecalling/merge_fastq/control_2.fastq.index, results/alignment/alignmemt_postfilter/control_2.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/xpore/xpore_eventalign/control_2_data.tsv, results/xpore/xpore_eventalign/control_2_summary.tsv
+    log: logs/xpore/xpore_eventalign/control_2.log
+    jobid: 63
+    reason: Missing output files: results/xpore/xpore_eventalign/control_2_data.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/control_2.bam
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=200000
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/control_0_data.tsv
+    output: results/xpore/xpore_dataprep/control_0/data.index, results/xpore/xpore_dataprep/control_0/data.json, results/xpore/xpore_dataprep/control_0/data.log, results/xpore/xpore_dataprep/control_0/data.readcount, results/xpore/xpore_dataprep/control_0/eventalign.index
+    log: logs/xpore/xpore_dataprep/control_0.log
+    jobid: 56
+    reason: Input files updated by another job: results/xpore/xpore_eventalign/control_0_data.tsv
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/cnot3_test_2_data.tsv
+    output: results/xpore/xpore_dataprep/cnot3_test_2/data.index, results/xpore/xpore_dataprep/cnot3_test_2/data.json, results/xpore/xpore_dataprep/cnot3_test_2/data.log, results/xpore/xpore_dataprep/cnot3_test_2/data.readcount, results/xpore/xpore_dataprep/cnot3_test_2/eventalign.index
+    log: logs/xpore/xpore_dataprep/cnot3_test_2.log
+    jobid: 74
+    reason: Missing output files: results/xpore/xpore_dataprep/cnot3_test_2/data.json; Input files updated by another job: results/xpore/xpore_eventalign/cnot3_test_2_data.tsv
+    wildcards: cond=cnot3_test, rep=2
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/control_2_data.tsv
+    output: results/xpore/xpore_dataprep/control_2/data.index, results/xpore/xpore_dataprep/control_2/data.json, results/xpore/xpore_dataprep/control_2/data.log, results/xpore/xpore_dataprep/control_2/data.readcount, results/xpore/xpore_dataprep/control_2/eventalign.index
+    log: logs/xpore/xpore_dataprep/control_2.log
+    jobid: 62
+    reason: Missing output files: results/xpore/xpore_dataprep/control_2/data.json; Input files updated by another job: results/xpore/xpore_eventalign/control_2_data.tsv
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/cnot3_test_0_data.tsv
+    output: results/xpore/xpore_dataprep/cnot3_test_0/data.index, results/xpore/xpore_dataprep/cnot3_test_0/data.json, results/xpore/xpore_dataprep/cnot3_test_0/data.log, results/xpore/xpore_dataprep/cnot3_test_0/data.readcount, results/xpore/xpore_dataprep/cnot3_test_0/eventalign.index
+    log: logs/xpore/xpore_dataprep/cnot3_test_0.log
+    jobid: 68
+    reason: Missing output files: results/xpore/xpore_dataprep/cnot3_test_0/data.json; Input files updated by another job: results/xpore/xpore_eventalign/cnot3_test_0_data.tsv
+    wildcards: cond=cnot3_test, rep=0
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/cnot3_test_1_data.tsv
+    output: results/xpore/xpore_dataprep/cnot3_test_1/data.index, results/xpore/xpore_dataprep/cnot3_test_1/data.json, results/xpore/xpore_dataprep/cnot3_test_1/data.log, results/xpore/xpore_dataprep/cnot3_test_1/data.readcount, results/xpore/xpore_dataprep/cnot3_test_1/eventalign.index
+    log: logs/xpore/xpore_dataprep/cnot3_test_1.log
+    jobid: 71
+    reason: Missing output files: results/xpore/xpore_dataprep/cnot3_test_1/data.json; Input files updated by another job: results/xpore/xpore_eventalign/cnot3_test_1_data.tsv
+    wildcards: cond=cnot3_test, rep=1
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/control_1_data.tsv
+    output: results/xpore/xpore_dataprep/control_1/data.index, results/xpore/xpore_dataprep/control_1/data.json, results/xpore/xpore_dataprep/control_1/data.log, results/xpore/xpore_dataprep/control_1/data.readcount, results/xpore/xpore_dataprep/control_1/eventalign.index
+    log: logs/xpore/xpore_dataprep/control_1.log
+    jobid: 59
+    reason: Missing output files: results/xpore/xpore_dataprep/control_1/data.json; Input files updated by another job: results/xpore/xpore_eventalign/control_1_data.tsv
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/cnot3_test_3_data.tsv
+    output: results/xpore/xpore_dataprep/cnot3_test_3/data.index, results/xpore/xpore_dataprep/cnot3_test_3/data.json, results/xpore/xpore_dataprep/cnot3_test_3/data.log, results/xpore/xpore_dataprep/cnot3_test_3/data.readcount, results/xpore/xpore_dataprep/cnot3_test_3/eventalign.index
+    log: logs/xpore/xpore_dataprep/cnot3_test_3.log
+    jobid: 77
+    reason: Missing output files: results/xpore/xpore_dataprep/cnot3_test_3/data.json; Input files updated by another job: results/xpore/xpore_eventalign/cnot3_test_3_data.tsv
+    wildcards: cond=cnot3_test, rep=3
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_dataprep:
+    input: results/xpore/xpore_eventalign/control_3_data.tsv
+    output: results/xpore/xpore_dataprep/control_3/data.index, results/xpore/xpore_dataprep/control_3/data.json, results/xpore/xpore_dataprep/control_3/data.log, results/xpore/xpore_dataprep/control_3/data.readcount, results/xpore/xpore_dataprep/control_3/eventalign.index
+    log: logs/xpore/xpore_dataprep/control_3.log
+    jobid: 65
+    reason: Missing output files: results/xpore/xpore_dataprep/control_3/data.json; Input files updated by another job: results/xpore/xpore_eventalign/control_3_data.tsv
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=200000, time=1d
+
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_config:
+    input: results/xpore/xpore_dataprep/control_0/data.json, results/xpore/xpore_dataprep/control_1/data.json, results/xpore/xpore_dataprep/control_2/data.json, results/xpore/xpore_dataprep/control_3/data.json, results/xpore/xpore_dataprep/cnot3_test_0/data.json, results/xpore/xpore_dataprep/cnot3_test_1/data.json, results/xpore/xpore_dataprep/cnot3_test_2/data.json, results/xpore/xpore_dataprep/cnot3_test_3/data.json
+    output: results/xpore/xpore_config/xpore_cnot3_config.yaml
+    log: logs/xpore/xpore_config/xpore_cnot3_config.log
+    jobid: 55
+    reason: Missing output files: results/xpore/xpore_config/xpore_cnot3_config.yaml; Input files updated by another job: results/xpore/xpore_dataprep/cnot3_test_2/data.json, results/xpore/xpore_dataprep/cnot3_test_0/data.json, results/xpore/xpore_dataprep/control_2/data.json, results/xpore/xpore_dataprep/control_1/data.json, results/xpore/xpore_dataprep/control_3/data.json, results/xpore/xpore_dataprep/cnot3_test_3/data.json, results/xpore/xpore_dataprep/cnot3_test_1/data.json, results/xpore/xpore_dataprep/control_0/data.json
+    resources: tmpdir=/tmp, time=5m
+
+[Fri Feb 24 17:33:57 2023]
+rule xpore_diffmod:
+    input: results/xpore/xpore_config/xpore_cnot3_config.yaml
+    output: results/xpore/xpore_cnot3_diffmod/diffmod.table, results/xpore/xpore_cnot3_diffmod/diffmod.log
+    log: logs/xpore/xpore_diffmod/xpore_cnot3_diffmod.log
+    jobid: 54
+    reason: Missing output files: results/xpore/xpore_cnot3_diffmod/diffmod.table; Input files updated by another job: results/xpore/xpore_config/xpore_cnot3_config.yaml
+    resources: tmpdir=/tmp, mem_mb=8000, time=1h
+
+
+[Fri Feb 24 17:33:57 2023]
+localrule all:
+    input: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/cnot3_test_0.bam, results/alignment/alignmemt_postfilter/cnot3_test_1.bam, results/alignment/alignmemt_postfilter/cnot3_test_2.bam, results/alignment/alignmemt_postfilter/cnot3_test_3.bam, results/alignment/alignmemt_merge/control.bam, results/alignment/alignmemt_merge/cnot3_test.bam, results/quality_control/pycoQC/pycoQC_control_0.json, results/quality_control/pycoQC/pycoQC_control_1.json, results/quality_control/pycoQC/pycoQC_control_2.json, results/quality_control/pycoQC/pycoQC_control_3.json, results/quality_control/pycoQC/pycoQC_cnot3_test_0.json, results/quality_control/pycoQC/pycoQC_cnot3_test_1.json, results/quality_control/pycoQC/pycoQC_cnot3_test_2.json, results/quality_control/pycoQC/pycoQC_cnot3_test_3.json, results/quality_control/pycoQC/pycoQC_control_0.html, results/quality_control/pycoQC/pycoQC_control_1.html, results/quality_control/pycoQC/pycoQC_control_2.html, results/quality_control/pycoQC/pycoQC_control_3.html, results/quality_control/pycoQC/pycoQC_cnot3_test_0.html, results/quality_control/pycoQC/pycoQC_cnot3_test_1.html, results/quality_control/pycoQC/pycoQC_cnot3_test_2.html, results/quality_control/pycoQC/pycoQC_cnot3_test_3.html, results/xpore/xpore_cnot3_diffmod/diffmod.table
+    jobid: 0
+    reason: Input files updated by another job: results/alignment/alignmemt_postfilter/cnot3_test_2.bam, results/quality_control/pycoQC/pycoQC_cnot3_test_0.html, results/quality_control/pycoQC/pycoQC_cnot3_test_1.html, results/quality_control/pycoQC/pycoQC_cnot3_test_1.json, results/quality_control/pycoQC/pycoQC_cnot3_test_0.json, results/alignment/alignmemt_merge/control.bam, results/alignment/alignmemt_postfilter/control_2.bam, results/quality_control/pycoQC/pycoQC_control_3.json, results/quality_control/pycoQC/pycoQC_control_0.json, results/quality_control/pycoQC/pycoQC_control_1.json, results/quality_control/pycoQC/pycoQC_control_2.html, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/cnot3_test_3.bam, results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam, results/quality_control/pycoQC/pycoQC_control_2.json, results/alignment/alignmemt_postfilter/cnot3_test_1.bam, results/xpore/xpore_cnot3_diffmod/diffmod.table, results/quality_control/pycoQC/pycoQC_control_1.html, results/quality_control/pycoQC/pycoQC_control_3.html, results/alignment/alignmemt_merge/cnot3_test.bam, results/quality_control/pycoQC/pycoQC_control_0.html, results/alignment/alignmemt_postfilter/cnot3_test_0.bam
+    resources: tmpdir=/tmp
+
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+alignmemt_merge             2              1              1
+alignmemt_postfilter        8              1              1
+alignmemt_prefilter         6              1              1
+all                         1              1              1
+min_ref_coverage            1              1              1
+pycoQC                      6              1              1
+xpore_config                1              1              1
+xpore_dataprep              8              1              1
+xpore_diffmod               1              1              1
+xpore_eventalign            8              1              1
+total                      42              1              1
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        alignmemt_merge, alignmemt_postfilter, all, min_ref_coverage, xpore_config, xpore_dataprep, xpore_diffmod, xpore_eventalign
+    missing output files:
+        alignmemt_merge, alignmemt_postfilter, alignmemt_prefilter, min_ref_coverage, pycoQC, xpore_config, xpore_dataprep, xpore_diffmod, xpore_eventalign
+    updated input files:
+        alignmemt_prefilter
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
