@@ -1,0 +1,4 @@
+#jobs: 100
+jobs: 999999999999
+
+cluster: "sbatch -t 2400 -J {rule} --mem={resources.mem_mb} -o logs/numbers/{rule}_{wildcards}.o -e logs/numbers/{rule}_{wildcards}.e"

@@ -1,0 +1,12 @@
+Loading and checking configuration file
+Loading and checking sample file
+replicates found: [0, 1]
+condition found: ['control', 'test']
+Defining target files
+Defining target files for `quality_control` rules
+Defining target files for `nanocompore` rules
+Building DAG of jobs...
+LockException:
+Error: Directory cannot be locked. Please make sure that no other Snakemake process is trying to create the same files in the following directory:
+/projects/ly_vu_direct_rna/MetaCompore
+If you are sure that no other instances of snakemake are running on this directory, the remaining lock was likely caused by a kill signal or a power loss. It can be removed with the --unlock argument.

@@ -1,0 +1,60 @@
+Checking arguments values
+Check input data files
+Parse data files
+Merge data
+Cleaning data
+	Discarding lines containing NA values
+		0 reads discarded
+	Filtering out zero length reads
+		32 reads discarded
+	Filtering out duplicated reads
+		0 reads discarded
+	Sorting run IDs by decreasing throughput
+		Run-id order ['9ded79e25aef7b55862ce1f870c95b8b8e31731c']
+	Reordering runids
+		Processing reads with Run_ID 9ded79e25aef7b55862ce1f870c95b8b8e31731c / time offset: 0
+	Cast value to appropriate type
+	Reindexing dataframe by read_ids
+		3,246,587 Final valid reads
+Loading plotting interface
+	Found 3,246,587 total reads
+	Found 2,891,968 pass reads (qual >= 7.0 and length >= 100)
+Generating HTML report
+	Parsing html config file
+	Running method run_summary
+		Computing plot
+	Running method basecall_summary
+		Computing plot
+	Running method alignment_summary
+/usr/local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3372: RuntimeWarning:
+
+Mean of empty slice.
+
+/usr/local/lib/python3.8/site-packages/numpy/core/_methods.py:170: RuntimeWarning:
+
+invalid value encountered in double_scalars
+
+		Computing plot
+	Running method read_len_1D
+		Computing plot
+	Running method align_len_1D
+		Computing plot
+Traceback (most recent call last):
+  File "/usr/local/bin/pycoQC", line 8, in <module>
+    sys.exit(main_pycoQC())
+  File "/usr/local/lib/python3.8/site-packages/pycoQC/__main__.py", line 115, in main_pycoQC
+    pycoQC (
+  File "/usr/local/lib/python3.8/site-packages/pycoQC/pycoQC.py", line 155, in pycoQC
+    reporter.html_report(
+  File "/usr/local/lib/python3.8/site-packages/pycoQC/pycoQC_report.py", line 89, in html_report
+    fig = method(**method_args)
+  File "/usr/local/lib/python3.8/site-packages/pycoQC/pycoQC_plot.py", line 480, in align_len_1D
+    fig = self.__1D_density_plot (
+  File "/usr/local/lib/python3.8/site-packages/pycoQC/pycoQC_plot.py", line 535, in __1D_density_plot
+    lab1, dd1, ld1 = self.__1D_density_data ("all", field_name, x_scale, nbins, smooth_sigma)
+  File "/usr/local/lib/python3.8/site-packages/pycoQC/pycoQC_plot.py", line 582, in __1D_density_data
+    min = np.nanmin(data)
+  File "<__array_function__ internals>", line 5, in nanmin
+  File "/usr/local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 319, in nanmin
+    res = np.fmin.reduce(a, axis=axis, out=out, **kwargs)
+ValueError: zero-size array to reduction operation fmin which has no identity

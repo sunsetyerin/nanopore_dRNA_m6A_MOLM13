@@ -1,0 +1,8 @@
+nohup: ignoring input
+2023-01-25T23:23:25.999998-0800 WARNING - MainProcess | Running SampComp
+2023-01-25T23:23:26.000609-0800 INFO - MainProcess | Checking and initialising SampComp
+2023-01-25T23:23:27.777543-0800 INFO - MainProcess | Reading eventalign index files
+2023-01-25T23:25:59.805074-0800 INFO - MainProcess | 	References found in index: 4193
+2023-01-25T23:25:59.805307-0800 INFO - MainProcess | Filtering out references with low coverage
+2023-01-25T23:26:01.831436-0800 INFO - MainProcess | 	References remaining after reference coverage filtering: 3885
+2023-01-25T23:26:05.177639-0800 INFO - MainProcess | Starting data processing

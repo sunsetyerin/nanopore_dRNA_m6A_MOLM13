@@ -1,0 +1,5 @@
+sample_id	condition	replicate	fast5_dir	fastq_zip	seqsum
+s0	control	0	/projects/ly_vu_direct_rna/results/nanopore/raw/F112875/PAK13513/basecalls/all/	/projects/ly_vu_direct_rna/results/nanopore/raw/F112875/PAK13513/PAK13513_pass_concat.fastq.gz	/projects/ly_vu_direct_rna/results/nanopore/raw/F112875/PAK13513/sequencing_summary.txt
+s1	control	1	/projects/ly_vu_direct_rna/results/nanopore/raw/F112877/PAK30951/basecalls/all/	/projects/ly_vu_direct_rna/results/nanopore/raw/F112877/PAK30951/PAK30951_pass_concat.fastq.gz	/projects/ly_vu_direct_rna/results/nanopore/raw/F112877/PAK30951/sequencing_summary.txt
+s2	test	0	/projects/ly_vu_direct_rna/results/nanopore/raw/F112876/PAK13262/basecalls/all/	/projects/ly_vu_direct_rna/results/nanopore/raw/F112876/PAK13262/PAK13262_pass_concat.fastq.gz	/projects/ly_vu_direct_rna/results/nanopore/raw/F112876/PAK13262/sequencing_summary.txt
+s3	test	1	/projects/ly_vu_direct_rna/results/nanopore/raw/F112878/PAK31274/basecalls/all/	/projects/ly_vu_direct_rna/results/nanopore/raw/F112878/PAK31274/PAK31274_pass_concat.fastq.gz	/projects/ly_vu_direct_rna/results/nanopore/raw/F112878/PAK31274/sequencing_summary.txt

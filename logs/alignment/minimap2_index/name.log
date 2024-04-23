@@ -1,0 +1,8 @@
+[M::mm_idx_gen::12.204*1.64] collected minimizers
+[M::mm_idx_gen::13.875*2.81] sorted minimizers
+[M::main::42.836*1.02] loaded/built the index for 204563 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 204563
+[M::mm_idx_stat::43.565*1.02] distinct minimizers: 16879094 (38.75% are singletons); average occurrences: 4.104; average spacing: 5.399
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -t 50 -d results/alignment/minimap2_index/transcriptome_reference.mmi results/input/get_transcriptome/transcriptome_reference.fa
+[M::main] Real time: 43.774 sec; CPU: 44.755 sec; Peak RSS: 2.741 GB

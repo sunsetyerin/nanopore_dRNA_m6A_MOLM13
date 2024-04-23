@@ -1,0 +1,23 @@
+[01;34m## Running Alignment Filter ##[0m
+[32m	Checking input bam file[0m
+[32m	Loading selected reference file ids[0m
+[37m	[DEBUG]: Found 3962 references to select[0m
+[37m	[DEBUG]: Make output directories[0m
+[32m	Parsing reads[0m
+[32m	Indexing output bam file with pysam[0m
+[32m	Indexing output bam file with pyBiotools[0m
+[01;34m## Running Alignment Reads_index ##[0m
+[32m	Checking Bam file[0m
+[32m	Parsing reads[0m
+[32m	Read counts summary[0m
+[32m	 Reads retained[0m
+[32m	  primary: 2,684,329[0m
+[32m	  total: 2,684,329[0m
+[32m	Write selected read_id list[0m
+[32m	Read counts summary[0m
+[32m	 Reads discarded[0m
+[32m	  invalid_reference: 291,423[0m
+[32m	  total: 291,423[0m
+[32m	 Reads retained[0m
+[32m	  primary: 2,684,329[0m
+[32m	  total: 2,684,329[0m

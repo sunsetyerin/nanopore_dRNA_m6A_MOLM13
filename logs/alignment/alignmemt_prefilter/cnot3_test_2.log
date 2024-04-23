@@ -1,0 +1,27 @@
+[01;34m## Running Alignment Filter ##[0m
+[32m	Checking input bam file[0m
+[37m	[DEBUG]: Make output directories[0m
+[32m	Parsing reads[0m
+[32m	Indexing output bam file with pysam[0m
+[32m	Indexing output bam file with pyBiotools[0m
+[01;34m## Running Alignment Reads_index ##[0m
+[32m	Checking Bam file[0m
+[32m	Parsing reads[0m
+[32m	Read counts summary[0m
+[32m	 Reads retained[0m
+[32m	  primary: 3,173,386[0m
+[32m	  total: 3,173,386[0m
+[32m	Read counts summary[0m
+[32m	 Reads discarded[0m
+[32m	  total: 21,037,052[0m
+[32m	  secondary: 17,689,134[0m
+[32m	  low_mapping_quality: 2,662,327[0m
+[32m	  unmapped: 437,983[0m
+[32m	  supplementary: 127,284[0m
+[32m	  low_identity: 66,274[0m
+[32m	  wrong_orientation: 45,032[0m
+[32m	  short_alignment: 8,867[0m
+[32m	  short_read: 151[0m
+[32m	 Reads retained[0m
+[32m	  primary: 3,173,386[0m
+[32m	  total: 3,173,386[0m

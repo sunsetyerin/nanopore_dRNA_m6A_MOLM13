@@ -1,0 +1,18 @@
+Loading and checking configuration file
+Loading and checking sample file
+replicates found: [0, 1]
+condition found: ['control', 'test']
+Defining target files
+Defining target files for `quality_control` rules
+Defining target files for `nanocompore` rules
+Building DAG of jobs...
+IncompleteFilesException:
+The files below seem to be incomplete. If you are sure that certain files are not incomplete, mark them as complete with
+
+    snakemake --cleanup-metadata <filenames>
+
+To re-generate the files rerun your command with the --rerun-incomplete flag.
+Incomplete files:
+results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv
+results/nanocompore/nanocompore_sampcomp/outnanocompore_shift_stats.tsv
+results/nanocompore/nanocompore_sampcomp/outSampComp.db

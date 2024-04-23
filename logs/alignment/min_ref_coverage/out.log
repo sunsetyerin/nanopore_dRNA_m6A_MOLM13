@@ -1,0 +1,15 @@
+timestamp: 2022-11-30 21:24:18.865305
+	reads_index_list: results/alignment/alignmemt_prefilter/control_0.bam.idx.gz results/alignment/alignmemt_prefilter/control_1.bam.idx.gz results/alignment/alignmemt_prefilter/test_0.bam.idx.gz results/alignment/alignmemt_prefilter/test_1.bam.idx.gz
+
+	ref_list: results/alignment/min_ref_coverage/valid_references_list.txt
+
+	min_cov: 30
+
+	log: logs/alignment/min_ref_coverage/out.log
+
+Parse index files
+Total references: 45081
+Count valid references per sample
+Select valid references for all samples
+Valid references: 4194
+Writing valid references to file

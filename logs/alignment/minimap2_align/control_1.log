@@ -1,0 +1,15 @@
+[M::main::2.468*0.91] loaded/built the index for 246511 target sequence(s)
+[M::mm_mapopt_update::3.385*0.93] mid_occ = 121
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 246511
+[M::mm_idx_stat::3.729*0.94] distinct minimizers: 20594185 (42.37% are singletons); average occurrences: 3.756; average spacing: 5.398
+[M::worker_pipeline::115.634*27.46] mapped 536029 sequences
+[M::worker_pipeline::181.923*23.33] mapped 507694 sequences
+[M::worker_pipeline::248.614*21.33] mapped 498110 sequences
+[M::worker_pipeline::314.116*20.24] mapped 496571 sequences
+[M::worker_pipeline::379.089*19.56] mapped 498179 sequences
+[M::worker_pipeline::445.751*18.89] mapped 498784 sequences
+[M::worker_pipeline::506.979*16.64] mapped 470190 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -t 100 -a -L -x map-ont results/alignment/minimap2_index2/transcriptome_reference.mmi results/basecalling/merge_fastq/control_1.fastq
+[M::main] Real time: 507.752 sec; CPU: 8437.954 sec; Peak RSS: 7.548 GB
+[bam_sort_core] merging from 14 files and 1 in-memory blocks...

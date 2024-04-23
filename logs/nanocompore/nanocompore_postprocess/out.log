@@ -1,0 +1,105 @@
+timestamp: 2022-12-30 04:27:02.444541
+	input_tsv: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv
+
+	fasta: results/input/get_transcriptome/transcriptome_reference.fa
+
+	outdir: results/final
+
+	log: logs/nanocompore/nanocompore_postprocess/out.log
+
+	p_val_lim: 0.01
+
+	quantile_lim: 0.5
+
+	min_distance: 9
+
+Load Fasta reference lengths
+
+Load and cleanup data
+
+Iterate over transcripts and call peaks
+
+GMM_context_0 counts
+
+	All transcripts:3651
+
+	Transcripts without significant pvalues:3327
+
+	Transcripts with significant pvalues:324
+
+	Transcripts with peaks called:324
+
+	Significant pvalues:1744
+
+	Peaks detected:896
+
+GMM_context_2 counts
+
+	All transcripts:3651
+
+	Transcripts with significant pvalues:421
+
+	Transcripts with peaks called:421
+
+	Significant pvalues:5046
+
+	Peaks detected:1351
+
+	Transcripts without significant pvalues:3230
+
+KS_intensity_context_0 counts
+
+	All transcripts:3651
+
+	Transcripts with significant pvalues:1533
+
+	Transcripts with peaks called:1533
+
+	Significant pvalues:26388
+
+	Peaks detected:8581
+
+	Transcripts without significant pvalues:2118
+
+KS_intensity_context_2 counts
+
+	All transcripts:3651
+
+	Transcripts with significant pvalues:1420
+
+	Transcripts with peaks called:1420
+
+	Significant pvalues:66288
+
+	Peaks detected:10756
+
+	Transcripts without significant pvalues:2231
+
+KS_dwell_context_0 counts
+
+	All transcripts:3651
+
+	Transcripts without significant pvalues:3507
+
+	Transcripts with significant pvalues:144
+
+	Transcripts with peaks called:144
+
+	Significant pvalues:613
+
+	Peaks detected:326
+
+KS_dwell_context_2 counts
+
+	All transcripts:3651
+
+	Transcripts without significant pvalues:3435
+
+	Transcripts with significant pvalues:216
+
+	Transcripts with peaks called:216
+
+	Significant pvalues:2211
+
+	Peaks detected:660
+

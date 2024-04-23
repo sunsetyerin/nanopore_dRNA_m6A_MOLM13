@@ -1,0 +1,15 @@
+timestamp: 2023-02-25 02:38:17.673907
+	reads_index_list: results/alignment/alignmemt_prefilter/control_0.bam.idx.gz results/alignment/alignmemt_prefilter/control_1.bam.idx.gz results/alignment/alignmemt_prefilter/control_2.bam.idx.gz results/alignment/alignmemt_prefilter/control_3.bam.idx.gz results/alignment/alignmemt_prefilter/cnot3_test_0.bam.idx.gz results/alignment/alignmemt_prefilter/cnot3_test_1.bam.idx.gz results/alignment/alignmemt_prefilter/cnot3_test_2.bam.idx.gz results/alignment/alignmemt_prefilter/cnot3_test_3.bam.idx.gz
+
+	ref_list: results/alignment/min_ref_coverage/cnot3_valid_references_list.txt
+
+	min_cov: 30
+
+	log: logs/alignment/min_ref_coverage/cnot3_out.log
+
+Parse index files
+Total references: 55151
+Count valid references per sample
+Select valid references for all samples
+Valid references: 3962
+Writing valid references to file

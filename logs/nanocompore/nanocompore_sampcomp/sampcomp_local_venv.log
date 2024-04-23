@@ -1,0 +1,13 @@
+2023-01-26T21:16:41.117211-0800 WARNING - MainProcess | Running SampComp
+2023-01-26T21:16:41.118731-0800 INFO - MainProcess | Checking and initialising SampComp
+2023-01-26T21:16:43.470734-0800 INFO - MainProcess | Reading eventalign index files
+2023-01-26T21:21:00.996899-0800 INFO - MainProcess | 	References found in index: 4193
+2023-01-26T21:21:00.997427-0800 INFO - MainProcess | Filtering out references with low coverage
+2023-01-26T21:21:04.486829-0800 INFO - MainProcess | 	References remaining after reference coverage filtering: 3885
+2023-01-26T21:21:12.522424-0800 INFO - MainProcess | Starting data processing
+/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/site-packages/sklearn/mixture/_base.py:269: ConvergenceWarning: Initialization 1 did not converge. Try different init parameters, or increase max_iter, tol or check for degenerate data.
+  % (init + 1), ConvergenceWarning)
+2023-01-27T12:31:49.987397-0800 INFO - Process-10 | All Done. Transcripts processed: 3885
+2023-01-27T12:31:52.239263-0800 INFO - MainProcess | Loading SampCompDB
+2023-01-27T12:32:44.433963-0800 INFO - MainProcess | Calculate results
+2023-01-27T22:33:53.071337-0800 INFO - MainProcess | Saving results

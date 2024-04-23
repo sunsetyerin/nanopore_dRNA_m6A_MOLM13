@@ -1,0 +1,27 @@
+2023-01-12T11:50:37.125048-0800 WARNING - MainProcess | Running SampComp
+2023-01-12T11:50:37.126395-0800 INFO - MainProcess | Checking and initialising SampComp
+2023-01-12T11:50:39.155097-0800 INFO - MainProcess | Reading eventalign index files
+2023-01-12T11:53:31.964104-0800 INFO - MainProcess | 	References found in index: 4193
+2023-01-12T11:53:31.964372-0800 INFO - MainProcess | Filtering out references with low coverage
+2023-01-12T11:53:40.940905-0800 INFO - MainProcess | 	References remaining after reference coverage filtering: 3885
+2023-01-12T11:53:45.215066-0800 INFO - MainProcess | Starting data processing
+Traceback (most recent call last):
+  File "/home/yekim/miniconda3/envs/nanocompore/bin/nanocompore", line 8, in <module>
+2023-01-12T21:20:31.203158-0800 INFO - Process-5 | All Done. Transcripts processed: 211
+Process Process-5:
+Traceback (most recent call last):
+  File "/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/site-packages/nanocompore/SampComp.py", line 391, in __write_output
+    for ref_id, ref_pos_list in iter(out_q.get, None):
+  File "/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/multiprocessing/queues.py", line 94, in get
+    res = self._recv_bytes()
+  File "/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/yekim/miniconda3/envs/nanocompore/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt

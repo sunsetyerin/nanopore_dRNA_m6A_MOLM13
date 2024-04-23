@@ -1,0 +1,36 @@
+Loading and checking configuration file
+Loading and checking sample file
+replicates found: [0, 1]
+condition found: ['control', 'test']
+Defining target files
+Defining target files for `quality_control` rules
+Defining target files for `nanocompore` rules
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+nanocompore_postprocess        1             10             10
+nanocompore_sampcomp           1             10             10
+total                          3              1             10
+
+Select jobs to execute...
+
+[Sun Dec 25 15:01:00 2022]
+rule nanocompore_sampcomp:
+    input: results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/input/get_transcriptome/transcriptome_reference.fa
+    output: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv, results/nanocompore/nanocompore_sampcomp/outnanocompore_shift_stats.tsv, results/nanocompore/nanocompore_sampcomp/outSampComp.db
+    log: logs/nanocompore/nanocompore_sampcomp/sampcomp.log
+    jobid: 39
+    reason: Missing output files: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv
+    threads: 10
+    resources: tmpdir=/var/tmp, mem_mb=1000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/cc51170f231d96215396cdf3077daf96.simg
+slurmstepd: error: Job 38788648 exceeded memory limit (14757368 > 14680064), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 38788648 ON n113 CANCELLED AT 2022-12-25T15:04:15 ***
+Will exit after finishing currently running jobs (scheduler).

@@ -1,0 +1,11 @@
+timestamp: 2022-11-25 19:23:43.611581
+	fa_input: ftp.ensembl.org/pub/release-106/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
+
+	fa_output: results/input/get_transcriptome/transcriptome_reference.fa
+
+	fai_output: results/input/get_transcriptome/transcriptome_reference.fa.fai
+
+	log: logs/input/get_transcriptome/transcriptome_reference.log
+
+Read input transcriptome fasta file
+Index fasta file

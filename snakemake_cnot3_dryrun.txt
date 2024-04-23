@@ -1,0 +1,974 @@
+Loading and checking configuration file
+Loading and checking sample file
+replicates found: [0, 1, 2, 3]
+condition found: ['control', 'test']
+Defining target files
+Defining target files for `quality_control` rules
+Defining target files for `nanocompore` rules
+Building DAG of jobs...
+Singularity image library://aleg/default/minimap2:2.17 will be pulled.
+Singularity image library://aleg/default/pycoqc:2.5.2 will be pulled.
+Singularity image library://aleg/default/pybiotools:0.2.7 will be pulled.
+Singularity image library://aleg/default/nanocompore:1.0.3 will be pulled.
+Singularity image library://aleg/default/f5c:gpu-0.6 will be pulled.
+Singularity image library://aleg/default/metacompore_python:3.8.6 will be pulled.
+Singularity image library://aleg/default/ont_guppy:gpu-4.2.2 will be pulled.
+Job stats:
+job                                count    min threads    max threads
+-------------------------------  -------  -------------  -------------
+alignmemt_merge                        2              1              1
+alignmemt_postfilter                   8              1              1
+alignmemt_prefilter                    8              1              1
+all                                    1              1              1
+f5c_eventalign                         8              1              1
+f5c_index                              8              1              1
+get_transcriptome                      1              1              1
+merge_fastq                            8              1              1
+min_ref_coverage                       1              1              1
+minimap2_align                         8              1              1
+minimap2_index                         1              1              1
+nanocompore_eventalign_collapse        8              1              1
+nanocompore_postprocess                1              1              1
+nanocompore_sampcomp                   1              1              1
+ont_guppy                              8              1              1
+pycoQC                                 8              1              1
+total                                 80              1              1
+
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112871/PAM58713/basecalls/all
+    output: results/basecalling/ont_guppy/test_1/sequencing_summary.txt, results/basecalling/ont_guppy/test_1
+    log: logs/basecalling/ont_guppy/test_1.log
+    jobid: 28
+    reason: Missing output files: results/basecalling/ont_guppy/test_1/sequencing_summary.txt, results/basecalling/ont_guppy/test_1
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112875/PAK13513/basecalls/all
+    output: results/basecalling/ont_guppy/control_2/sequencing_summary.txt, results/basecalling/ont_guppy/control_2
+    log: logs/basecalling/ont_guppy/control_2.log
+    jobid: 16
+    reason: Missing output files: results/basecalling/ont_guppy/control_2/sequencing_summary.txt, results/basecalling/ont_guppy/control_2
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112873/PAK13488/basecalls/all
+    output: results/basecalling/ont_guppy/test_2/sequencing_summary.txt, results/basecalling/ont_guppy/test_2
+    log: logs/basecalling/ont_guppy/test_2.log
+    jobid: 32
+    reason: Missing output files: results/basecalling/ont_guppy/test_2/sequencing_summary.txt, results/basecalling/ont_guppy/test_2
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112877/PAK30951/basecalls/all
+    output: results/basecalling/ont_guppy/control_3/sequencing_summary.txt, results/basecalling/ont_guppy/control_3
+    log: logs/basecalling/ont_guppy/control_3.log
+    jobid: 20
+    reason: Missing output files: results/basecalling/ont_guppy/control_3, results/basecalling/ont_guppy/control_3/sequencing_summary.txt
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112874/PAK13320/basecalls/all
+    output: results/basecalling/ont_guppy/test_3/sequencing_summary.txt, results/basecalling/ont_guppy/test_3
+    log: logs/basecalling/ont_guppy/test_3.log
+    jobid: 36
+    reason: Missing output files: results/basecalling/ont_guppy/test_3/sequencing_summary.txt, results/basecalling/ont_guppy/test_3
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112870/PAM58315/basecalls/all
+    output: results/basecalling/ont_guppy/test_0/sequencing_summary.txt, results/basecalling/ont_guppy/test_0
+    log: logs/basecalling/ont_guppy/test_0.log
+    jobid: 24
+    reason: Missing output files: results/basecalling/ont_guppy/test_0, results/basecalling/ont_guppy/test_0/sequencing_summary.txt
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112872/PAM58460/basecalls/all
+    output: results/basecalling/ont_guppy/control_1/sequencing_summary.txt, results/basecalling/ont_guppy/control_1
+    log: logs/basecalling/ont_guppy/control_1.log
+    jobid: 12
+    reason: Missing output files: results/basecalling/ont_guppy/control_1, results/basecalling/ont_guppy/control_1/sequencing_summary.txt
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule get_transcriptome:
+    input: /projects/ly_vu_direct_rna/results/nanopore/data/Homo_sapiens.GRCh38.cdna.all.fa
+    output: results/input/get_transcriptome/transcriptome_reference.fa, results/input/get_transcriptome/transcriptome_reference.fa.fai
+    log: logs/input/get_transcriptome/transcriptome_reference.log
+    jobid: 5
+    reason: Missing output files: results/input/get_transcriptome/transcriptome_reference.fa
+    resources: tmpdir=/tmp, mem_mb=1000
+
+[Wed Nov 23 15:09:21 2022]
+rule ont_guppy:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112869/PAM58483/basecalls/all
+    output: results/basecalling/ont_guppy/control_0/sequencing_summary.txt, results/basecalling/ont_guppy/control_0
+    log: logs/basecalling/ont_guppy/control_0.log
+    jobid: 7
+    reason: Missing output files: results/basecalling/ont_guppy/control_0/sequencing_summary.txt, results/basecalling/ont_guppy/control_0
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=6000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/test_1
+    output: results/basecalling/merge_fastq/test_1.fastq
+    log: logs/basecalling/merge_fastq/test_1.log
+    jobid: 27
+    reason: Missing output files: results/basecalling/merge_fastq/test_1.fastq; Input files updated by another job: results/basecalling/ont_guppy/test_1
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_index:
+    input: results/input/get_transcriptome/transcriptome_reference.fa
+    output: results/alignment/minimap2_index/transcriptome_reference.mmi
+    log: logs/alignment/minimap2_index/name.log
+    jobid: 4
+    reason: Missing output files: results/alignment/minimap2_index/transcriptome_reference.mmi; Input files updated by another job: results/input/get_transcriptome/transcriptome_reference.fa
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/control_0
+    output: results/basecalling/merge_fastq/control_0.fastq
+    log: logs/basecalling/merge_fastq/control_0.log
+    jobid: 6
+    reason: Missing output files: results/basecalling/merge_fastq/control_0.fastq; Input files updated by another job: results/basecalling/ont_guppy/control_0
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/control_2
+    output: results/basecalling/merge_fastq/control_2.fastq
+    log: logs/basecalling/merge_fastq/control_2.log
+    jobid: 15
+    reason: Missing output files: results/basecalling/merge_fastq/control_2.fastq; Input files updated by another job: results/basecalling/ont_guppy/control_2
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/test_2
+    output: results/basecalling/merge_fastq/test_2.fastq
+    log: logs/basecalling/merge_fastq/test_2.log
+    jobid: 31
+    reason: Missing output files: results/basecalling/merge_fastq/test_2.fastq; Input files updated by another job: results/basecalling/ont_guppy/test_2
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/control_3
+    output: results/basecalling/merge_fastq/control_3.fastq
+    log: logs/basecalling/merge_fastq/control_3.log
+    jobid: 19
+    reason: Missing output files: results/basecalling/merge_fastq/control_3.fastq; Input files updated by another job: results/basecalling/ont_guppy/control_3
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/test_3
+    output: results/basecalling/merge_fastq/test_3.fastq
+    log: logs/basecalling/merge_fastq/test_3.log
+    jobid: 35
+    reason: Missing output files: results/basecalling/merge_fastq/test_3.fastq; Input files updated by another job: results/basecalling/ont_guppy/test_3
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/test_0
+    output: results/basecalling/merge_fastq/test_0.fastq
+    log: logs/basecalling/merge_fastq/test_0.log
+    jobid: 23
+    reason: Missing output files: results/basecalling/merge_fastq/test_0.fastq; Input files updated by another job: results/basecalling/ont_guppy/test_0
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule merge_fastq:
+    input: results/basecalling/ont_guppy/control_1
+    output: results/basecalling/merge_fastq/control_1.fastq
+    log: logs/basecalling/merge_fastq/control_1.log
+    jobid: 11
+    reason: Missing output files: results/basecalling/merge_fastq/control_1.fastq; Input files updated by another job: results/basecalling/ont_guppy/control_1
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/control_2.fastq
+    output: results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai
+    log: logs/alignment/minimap2_align/control_2.log
+    jobid: 14
+    reason: Missing output files: results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai; Input files updated by another job: results/basecalling/merge_fastq/control_2.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/control_3.fastq
+    output: results/alignment/minimap2_align/control_3.bam, results/alignment/minimap2_align/control_3.bam.bai
+    log: logs/alignment/minimap2_align/control_3.log
+    jobid: 18
+    reason: Missing output files: results/alignment/minimap2_align/control_3.bam.bai, results/alignment/minimap2_align/control_3.bam; Input files updated by another job: results/basecalling/merge_fastq/control_3.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/test_0.fastq
+    output: results/alignment/minimap2_align/test_0.bam, results/alignment/minimap2_align/test_0.bam.bai
+    log: logs/alignment/minimap2_align/test_0.log
+    jobid: 22
+    reason: Missing output files: results/alignment/minimap2_align/test_0.bam.bai, results/alignment/minimap2_align/test_0.bam; Input files updated by another job: results/basecalling/merge_fastq/test_0.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/control_0.fastq
+    output: results/alignment/minimap2_align/control_0.bam, results/alignment/minimap2_align/control_0.bam.bai
+    log: logs/alignment/minimap2_align/control_0.log
+    jobid: 3
+    reason: Missing output files: results/alignment/minimap2_align/control_0.bam, results/alignment/minimap2_align/control_0.bam.bai; Input files updated by another job: results/basecalling/merge_fastq/control_0.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/test_1.fastq
+    output: results/alignment/minimap2_align/test_1.bam, results/alignment/minimap2_align/test_1.bam.bai
+    log: logs/alignment/minimap2_align/test_1.log
+    jobid: 26
+    reason: Missing output files: results/alignment/minimap2_align/test_1.bam, results/alignment/minimap2_align/test_1.bam.bai; Input files updated by another job: results/basecalling/merge_fastq/test_1.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112871/PAM58713/basecalls/all, results/basecalling/merge_fastq/test_1.fastq
+    output: results/basecalling/merge_fastq/test_1.fastq.index, results/basecalling/merge_fastq/test_1.fastq.index.fai, results/basecalling/merge_fastq/test_1.fastq.index.gzi, results/basecalling/merge_fastq/test_1.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/test_1.log
+    jobid: 57
+    reason: Missing output files: results/basecalling/merge_fastq/test_1.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/test_1.fastq
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112874/PAK13320/basecalls/all, results/basecalling/merge_fastq/test_3.fastq
+    output: results/basecalling/merge_fastq/test_3.fastq.index, results/basecalling/merge_fastq/test_3.fastq.index.fai, results/basecalling/merge_fastq/test_3.fastq.index.gzi, results/basecalling/merge_fastq/test_3.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/test_3.log
+    jobid: 61
+    reason: Missing output files: results/basecalling/merge_fastq/test_3.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/test_3.fastq
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112869/PAM58483/basecalls/all, results/basecalling/merge_fastq/control_0.fastq
+    output: results/basecalling/merge_fastq/control_0.fastq.index, results/basecalling/merge_fastq/control_0.fastq.index.fai, results/basecalling/merge_fastq/control_0.fastq.index.gzi, results/basecalling/merge_fastq/control_0.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/control_0.log
+    jobid: 47
+    reason: Missing output files: results/basecalling/merge_fastq/control_0.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/control_0.fastq
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112875/PAK13513/basecalls/all, results/basecalling/merge_fastq/control_2.fastq
+    output: results/basecalling/merge_fastq/control_2.fastq.index, results/basecalling/merge_fastq/control_2.fastq.index.fai, results/basecalling/merge_fastq/control_2.fastq.index.gzi, results/basecalling/merge_fastq/control_2.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/control_2.log
+    jobid: 51
+    reason: Missing output files: results/basecalling/merge_fastq/control_2.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/control_2.fastq
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112870/PAM58315/basecalls/all, results/basecalling/merge_fastq/test_0.fastq
+    output: results/basecalling/merge_fastq/test_0.fastq.index, results/basecalling/merge_fastq/test_0.fastq.index.fai, results/basecalling/merge_fastq/test_0.fastq.index.gzi, results/basecalling/merge_fastq/test_0.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/test_0.log
+    jobid: 55
+    reason: Missing output files: results/basecalling/merge_fastq/test_0.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/test_0.fastq
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/test_2.fastq
+    output: results/alignment/minimap2_align/test_2.bam, results/alignment/minimap2_align/test_2.bam.bai
+    log: logs/alignment/minimap2_align/test_2.log
+    jobid: 30
+    reason: Missing output files: results/alignment/minimap2_align/test_2.bam, results/alignment/minimap2_align/test_2.bam.bai; Input files updated by another job: results/basecalling/merge_fastq/test_2.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/test_3.fastq
+    output: results/alignment/minimap2_align/test_3.bam, results/alignment/minimap2_align/test_3.bam.bai
+    log: logs/alignment/minimap2_align/test_3.log
+    jobid: 34
+    reason: Missing output files: results/alignment/minimap2_align/test_3.bam.bai, results/alignment/minimap2_align/test_3.bam; Input files updated by another job: results/basecalling/merge_fastq/test_3.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule minimap2_align:
+    input: results/alignment/minimap2_index/transcriptome_reference.mmi, results/basecalling/merge_fastq/control_1.fastq
+    output: results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai
+    log: logs/alignment/minimap2_align/control_1.log
+    jobid: 10
+    reason: Missing output files: results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai; Input files updated by another job: results/basecalling/merge_fastq/control_1.fastq, results/alignment/minimap2_index/transcriptome_reference.mmi
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112873/PAK13488/basecalls/all, results/basecalling/merge_fastq/test_2.fastq
+    output: results/basecalling/merge_fastq/test_2.fastq.index, results/basecalling/merge_fastq/test_2.fastq.index.fai, results/basecalling/merge_fastq/test_2.fastq.index.gzi, results/basecalling/merge_fastq/test_2.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/test_2.log
+    jobid: 59
+    reason: Missing output files: results/basecalling/merge_fastq/test_2.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/test_2.fastq
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112872/PAM58460/basecalls/all, results/basecalling/merge_fastq/control_1.fastq
+    output: results/basecalling/merge_fastq/control_1.fastq.index, results/basecalling/merge_fastq/control_1.fastq.index.fai, results/basecalling/merge_fastq/control_1.fastq.index.gzi, results/basecalling/merge_fastq/control_1.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/control_1.log
+    jobid: 49
+    reason: Missing output files: results/basecalling/merge_fastq/control_1.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/control_1.fastq
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_index:
+    input: /projects/ly_vu_direct_rna/results/nanopore/raw/F112877/PAK30951/basecalls/all, results/basecalling/merge_fastq/control_3.fastq
+    output: results/basecalling/merge_fastq/control_3.fastq.index, results/basecalling/merge_fastq/control_3.fastq.index.fai, results/basecalling/merge_fastq/control_3.fastq.index.gzi, results/basecalling/merge_fastq/control_3.fastq.index.readdb
+    log: logs/resquiggling/f5c_index/control_3.log
+    jobid: 53
+    reason: Missing output files: results/basecalling/merge_fastq/control_3.fastq.index; Input files updated by another job: results/basecalling/merge_fastq/control_3.fastq
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/test_1.bam, results/alignment/minimap2_align/test_1.bam.bai
+    output: results/alignment/alignmemt_prefilter/test_1.bam, results/alignment/alignmemt_prefilter/test_1.bam.bai, results/alignment/alignmemt_prefilter/test_1.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/test_1.log
+    jobid: 25
+    reason: Missing output files: results/alignment/alignmemt_prefilter/test_1.bam.bai, results/alignment/alignmemt_prefilter/test_1.bam.idx.gz, results/alignment/alignmemt_prefilter/test_1.bam; Input files updated by another job: results/alignment/minimap2_align/test_1.bam, results/alignment/minimap2_align/test_1.bam.bai
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/control_2/sequencing_summary.txt, results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_2.json, results/quality_control/pycoQC/pycoQC_control_2.html
+    log: logs/quality_control/pycoQC/control_2.log
+    jobid: 64
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_2.html, results/quality_control/pycoQC/pycoQC_control_2.json; Input files updated by another job: results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai, results/basecalling/ont_guppy/control_2/sequencing_summary.txt
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/test_2/sequencing_summary.txt, results/alignment/minimap2_align/test_2.bam, results/alignment/minimap2_align/test_2.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_test_2.json, results/quality_control/pycoQC/pycoQC_test_2.html
+    log: logs/quality_control/pycoQC/test_2.log
+    jobid: 68
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_test_2.html, results/quality_control/pycoQC/pycoQC_test_2.json; Input files updated by another job: results/basecalling/ont_guppy/test_2/sequencing_summary.txt, results/alignment/minimap2_align/test_2.bam, results/alignment/minimap2_align/test_2.bam.bai
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_0.bam, results/alignment/minimap2_align/control_0.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/alignmemt_prefilter/control_0.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_0.log
+    jobid: 2
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/alignmemt_prefilter/control_0.bam.idx.gz; Input files updated by another job: results/alignment/minimap2_align/control_0.bam, results/alignment/minimap2_align/control_0.bam.bai
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/test_2.bam, results/alignment/minimap2_align/test_2.bam.bai
+    output: results/alignment/alignmemt_prefilter/test_2.bam, results/alignment/alignmemt_prefilter/test_2.bam.bai, results/alignment/alignmemt_prefilter/test_2.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/test_2.log
+    jobid: 29
+    reason: Missing output files: results/alignment/alignmemt_prefilter/test_2.bam, results/alignment/alignmemt_prefilter/test_2.bam.bai, results/alignment/alignmemt_prefilter/test_2.bam.idx.gz; Input files updated by another job: results/alignment/minimap2_align/test_2.bam, results/alignment/minimap2_align/test_2.bam.bai
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/test_3.bam, results/alignment/minimap2_align/test_3.bam.bai
+    output: results/alignment/alignmemt_prefilter/test_3.bam, results/alignment/alignmemt_prefilter/test_3.bam.bai, results/alignment/alignmemt_prefilter/test_3.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/test_3.log
+    jobid: 33
+    reason: Missing output files: results/alignment/alignmemt_prefilter/test_3.bam, results/alignment/alignmemt_prefilter/test_3.bam.bai, results/alignment/alignmemt_prefilter/test_3.bam.idx.gz; Input files updated by another job: results/alignment/minimap2_align/test_3.bam.bai, results/alignment/minimap2_align/test_3.bam
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_1.bam, results/alignment/alignmemt_prefilter/control_1.bam.bai, results/alignment/alignmemt_prefilter/control_1.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_1.log
+    jobid: 9
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_1.bam.bai, results/alignment/alignmemt_prefilter/control_1.bam.idx.gz, results/alignment/alignmemt_prefilter/control_1.bam; Input files updated by another job: results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/control_3/sequencing_summary.txt, results/alignment/minimap2_align/control_3.bam, results/alignment/minimap2_align/control_3.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_3.json, results/quality_control/pycoQC/pycoQC_control_3.html
+    log: logs/quality_control/pycoQC/control_3.log
+    jobid: 65
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_3.json, results/quality_control/pycoQC/pycoQC_control_3.html; Input files updated by another job: results/basecalling/ont_guppy/control_3/sequencing_summary.txt, results/alignment/minimap2_align/control_3.bam.bai, results/alignment/minimap2_align/control_3.bam
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/alignmemt_prefilter/control_2.bam.bai, results/alignment/alignmemt_prefilter/control_2.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_2.log
+    jobid: 13
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_2.bam.idx.gz, results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/alignmemt_prefilter/control_2.bam.bai; Input files updated by another job: results/alignment/minimap2_align/control_2.bam, results/alignment/minimap2_align/control_2.bam.bai
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/test_3/sequencing_summary.txt, results/alignment/minimap2_align/test_3.bam, results/alignment/minimap2_align/test_3.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_test_3.json, results/quality_control/pycoQC/pycoQC_test_3.html
+    log: logs/quality_control/pycoQC/test_3.log
+    jobid: 69
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_test_3.json, results/quality_control/pycoQC/pycoQC_test_3.html; Input files updated by another job: results/basecalling/ont_guppy/test_3/sequencing_summary.txt, results/alignment/minimap2_align/test_3.bam.bai, results/alignment/minimap2_align/test_3.bam
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/control_0/sequencing_summary.txt, results/alignment/minimap2_align/control_0.bam, results/alignment/minimap2_align/control_0.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_0.json, results/quality_control/pycoQC/pycoQC_control_0.html
+    log: logs/quality_control/pycoQC/control_0.log
+    jobid: 62
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_0.html, results/quality_control/pycoQC/pycoQC_control_0.json; Input files updated by another job: results/alignment/minimap2_align/control_0.bam, results/basecalling/ont_guppy/control_0/sequencing_summary.txt, results/alignment/minimap2_align/control_0.bam.bai
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/test_0.bam, results/alignment/minimap2_align/test_0.bam.bai
+    output: results/alignment/alignmemt_prefilter/test_0.bam, results/alignment/alignmemt_prefilter/test_0.bam.bai, results/alignment/alignmemt_prefilter/test_0.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/test_0.log
+    jobid: 21
+    reason: Missing output files: results/alignment/alignmemt_prefilter/test_0.bam.idx.gz, results/alignment/alignmemt_prefilter/test_0.bam.bai, results/alignment/alignmemt_prefilter/test_0.bam; Input files updated by another job: results/alignment/minimap2_align/test_0.bam.bai, results/alignment/minimap2_align/test_0.bam
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/test_0/sequencing_summary.txt, results/alignment/minimap2_align/test_0.bam, results/alignment/minimap2_align/test_0.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_test_0.json, results/quality_control/pycoQC/pycoQC_test_0.html
+    log: logs/quality_control/pycoQC/test_0.log
+    jobid: 66
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_test_0.json, results/quality_control/pycoQC/pycoQC_test_0.html; Input files updated by another job: results/basecalling/ont_guppy/test_0/sequencing_summary.txt, results/alignment/minimap2_align/test_0.bam.bai, results/alignment/minimap2_align/test_0.bam
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_prefilter:
+    input: results/alignment/minimap2_align/control_3.bam, results/alignment/minimap2_align/control_3.bam.bai
+    output: results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.bai, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz
+    log: logs/alignment/alignmemt_prefilter/control_3.log
+    jobid: 17
+    reason: Missing output files: results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz, results/alignment/alignmemt_prefilter/control_3.bam.bai; Input files updated by another job: results/alignment/minimap2_align/control_3.bam.bai, results/alignment/minimap2_align/control_3.bam
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/control_1/sequencing_summary.txt, results/alignment/minimap2_align/control_1.bam, results/alignment/minimap2_align/control_1.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_control_1.json, results/quality_control/pycoQC/pycoQC_control_1.html
+    log: logs/quality_control/pycoQC/control_1.log
+    jobid: 63
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_control_1.json, results/quality_control/pycoQC/pycoQC_control_1.html; Input files updated by another job: results/alignment/minimap2_align/control_1.bam, results/basecalling/ont_guppy/control_1/sequencing_summary.txt, results/alignment/minimap2_align/control_1.bam.bai
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule pycoQC:
+    input: results/basecalling/ont_guppy/test_1/sequencing_summary.txt, results/alignment/minimap2_align/test_1.bam, results/alignment/minimap2_align/test_1.bam.bai
+    output: results/quality_control/pycoQC/pycoQC_test_1.json, results/quality_control/pycoQC/pycoQC_test_1.html
+    log: logs/quality_control/pycoQC/test_1.log
+    jobid: 67
+    reason: Missing output files: results/quality_control/pycoQC/pycoQC_test_1.json, results/quality_control/pycoQC/pycoQC_test_1.html; Input files updated by another job: results/alignment/minimap2_align/test_1.bam, results/basecalling/ont_guppy/test_1/sequencing_summary.txt, results/alignment/minimap2_align/test_1.bam.bai
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+Would remove temporary output results/alignment/minimap2_align/test_2.bam
+Would remove temporary output results/alignment/minimap2_align/test_2.bam.bai
+Would remove temporary output results/alignment/minimap2_align/control_2.bam
+Would remove temporary output results/alignment/minimap2_align/control_2.bam.bai
+Would remove temporary output results/alignment/minimap2_align/test_3.bam.bai
+Would remove temporary output results/alignment/minimap2_align/test_3.bam
+Would remove temporary output results/alignment/minimap2_align/control_0.bam
+Would remove temporary output results/alignment/minimap2_align/control_0.bam.bai
+Would remove temporary output results/alignment/minimap2_align/test_0.bam.bai
+Would remove temporary output results/alignment/minimap2_align/test_0.bam
+Would remove temporary output results/alignment/minimap2_align/control_3.bam.bai
+Would remove temporary output results/alignment/minimap2_align/control_3.bam
+Would remove temporary output results/alignment/minimap2_align/control_1.bam
+Would remove temporary output results/alignment/minimap2_align/control_1.bam.bai
+Would remove temporary output results/alignment/minimap2_align/test_1.bam
+Would remove temporary output results/alignment/minimap2_align/test_1.bam.bai
+
+[Wed Nov 23 15:09:21 2022]
+rule min_ref_coverage:
+    input: results/alignment/alignmemt_prefilter/control_0.bam.idx.gz, results/alignment/alignmemt_prefilter/control_1.bam.idx.gz, results/alignment/alignmemt_prefilter/control_2.bam.idx.gz, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz, results/alignment/alignmemt_prefilter/test_0.bam.idx.gz, results/alignment/alignmemt_prefilter/test_1.bam.idx.gz, results/alignment/alignmemt_prefilter/test_2.bam.idx.gz, results/alignment/alignmemt_prefilter/test_3.bam.idx.gz
+    output: results/alignment/min_ref_coverage/valid_references_list.txt
+    log: logs/alignment/min_ref_coverage/out.log
+    jobid: 8
+    reason: Missing output files: results/alignment/min_ref_coverage/valid_references_list.txt; Input files updated by another job: results/alignment/alignmemt_prefilter/test_1.bam.idx.gz, results/alignment/alignmemt_prefilter/control_2.bam.idx.gz, results/alignment/alignmemt_prefilter/test_0.bam.idx.gz, results/alignment/alignmemt_prefilter/control_1.bam.idx.gz, results/alignment/alignmemt_prefilter/test_2.bam.idx.gz, results/alignment/alignmemt_prefilter/control_3.bam.idx.gz, results/alignment/alignmemt_prefilter/test_3.bam.idx.gz, results/alignment/alignmemt_prefilter/control_0.bam.idx.gz
+    resources: tmpdir=/tmp, mem_mb=1000
+
+Would remove temporary output results/alignment/alignmemt_prefilter/control_0.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/control_1.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/control_2.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/control_3.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/test_0.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/test_1.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/test_2.bam.idx.gz
+Would remove temporary output results/alignment/alignmemt_prefilter/test_3.bam.idx.gz
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/test_1.bam, results/alignment/alignmemt_prefilter/test_1.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/test_1.bam, results/alignment/alignmemt_postfilter/test_1.bam.bai, results/alignment/alignmemt_postfilter/test_1.bam.idx.gz, results/alignment/alignmemt_postfilter/test_1_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/test_1.log
+    jobid: 41
+    reason: Missing output files: results/alignment/alignmemt_postfilter/test_1.bam.bai, results/alignment/alignmemt_postfilter/test_1.bam; Input files updated by another job: results/alignment/alignmemt_prefilter/test_1.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt, results/alignment/alignmemt_prefilter/test_1.bam
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_0.bam.idx.gz, results/alignment/alignmemt_postfilter/control_0_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_0.log
+    jobid: 1
+    reason: Missing output files: results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_0.bam; Input files updated by another job: results/alignment/alignmemt_prefilter/control_0.bam.bai, results/alignment/alignmemt_prefilter/control_0.bam, results/alignment/min_ref_coverage/valid_references_list.txt
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/test_2.bam, results/alignment/alignmemt_prefilter/test_2.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/test_2.bam, results/alignment/alignmemt_postfilter/test_2.bam.bai, results/alignment/alignmemt_postfilter/test_2.bam.idx.gz, results/alignment/alignmemt_postfilter/test_2_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/test_2.log
+    jobid: 42
+    reason: Missing output files: results/alignment/alignmemt_postfilter/test_2.bam.bai, results/alignment/alignmemt_postfilter/test_2.bam; Input files updated by another job: results/alignment/alignmemt_prefilter/test_2.bam, results/alignment/min_ref_coverage/valid_references_list.txt, results/alignment/alignmemt_prefilter/test_2.bam.bai
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/alignmemt_prefilter/control_2.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_2.bam.bai, results/alignment/alignmemt_postfilter/control_2.bam.idx.gz, results/alignment/alignmemt_postfilter/control_2_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_2.log
+    jobid: 38
+    reason: Missing output files: results/alignment/alignmemt_postfilter/control_2.bam.bai, results/alignment/alignmemt_postfilter/control_2.bam; Input files updated by another job: results/alignment/min_ref_coverage/valid_references_list.txt, results/alignment/alignmemt_prefilter/control_2.bam, results/alignment/alignmemt_prefilter/control_2.bam.bai
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/test_0.bam, results/alignment/alignmemt_prefilter/test_0.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/test_0.bam, results/alignment/alignmemt_postfilter/test_0.bam.bai, results/alignment/alignmemt_postfilter/test_0.bam.idx.gz, results/alignment/alignmemt_postfilter/test_0_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/test_0.log
+    jobid: 40
+    reason: Missing output files: results/alignment/alignmemt_postfilter/test_0.bam, results/alignment/alignmemt_postfilter/test_0.bam.bai; Input files updated by another job: results/alignment/min_ref_coverage/valid_references_list.txt, results/alignment/alignmemt_prefilter/test_0.bam.bai, results/alignment/alignmemt_prefilter/test_0.bam
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/test_3.bam, results/alignment/alignmemt_prefilter/test_3.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/test_3.bam, results/alignment/alignmemt_postfilter/test_3.bam.bai, results/alignment/alignmemt_postfilter/test_3.bam.idx.gz, results/alignment/alignmemt_postfilter/test_3_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/test_3.log
+    jobid: 43
+    reason: Missing output files: results/alignment/alignmemt_postfilter/test_3.bam.bai, results/alignment/alignmemt_postfilter/test_3.bam; Input files updated by another job: results/alignment/min_ref_coverage/valid_references_list.txt, results/alignment/alignmemt_prefilter/test_3.bam, results/alignment/alignmemt_prefilter/test_3.bam.bai
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_1.bam, results/alignment/alignmemt_prefilter/control_1.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_1.bam.bai, results/alignment/alignmemt_postfilter/control_1.bam.idx.gz, results/alignment/alignmemt_postfilter/control_1_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_1.log
+    jobid: 37
+    reason: Missing output files: results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_1.bam.bai; Input files updated by another job: results/alignment/min_ref_coverage/valid_references_list.txt, results/alignment/alignmemt_prefilter/control_1.bam.bai, results/alignment/alignmemt_prefilter/control_1.bam
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_postfilter:
+    input: results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.bai, results/alignment/min_ref_coverage/valid_references_list.txt
+    output: results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/control_3.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam.idx.gz, results/alignment/alignmemt_postfilter/control_3_selected_read_ids.txt
+    log: logs/alignment/alignmemt_postfilter/control_3.log
+    jobid: 39
+    reason: Missing output files: results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/control_3.bam.bai; Input files updated by another job: results/alignment/min_ref_coverage/valid_references_list.txt, results/alignment/alignmemt_prefilter/control_3.bam, results/alignment/alignmemt_prefilter/control_3.bam.bai
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+Would remove temporary output results/alignment/alignmemt_prefilter/test_1.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/test_1.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_0.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/control_0.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/test_2.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/test_2.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/control_2.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_2.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/test_0.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/test_0.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/test_3.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/test_3.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/control_1.bam.bai
+Would remove temporary output results/alignment/alignmemt_prefilter/control_1.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_3.bam
+Would remove temporary output results/alignment/alignmemt_prefilter/control_3.bam.bai
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/test_1.fastq, results/basecalling/merge_fastq/test_1.fastq.index, results/alignment/alignmemt_postfilter/test_1.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/test_1_data.tsv, results/resquiggling/f5c_eventalign/test_1_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/test_1.log
+    jobid: 56
+    reason: Missing output files: results/resquiggling/f5c_eventalign/test_1_summary.tsv, results/resquiggling/f5c_eventalign/test_1_data.tsv; Input files updated by another job: results/basecalling/merge_fastq/test_1.fastq, results/basecalling/merge_fastq/test_1.fastq.index, results/alignment/alignmemt_postfilter/test_1.bam, results/input/get_transcriptome/transcriptome_reference.fa
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/test_2.fastq, results/basecalling/merge_fastq/test_2.fastq.index, results/alignment/alignmemt_postfilter/test_2.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/test_2_data.tsv, results/resquiggling/f5c_eventalign/test_2_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/test_2.log
+    jobid: 58
+    reason: Missing output files: results/resquiggling/f5c_eventalign/test_2_data.tsv, results/resquiggling/f5c_eventalign/test_2_summary.tsv; Input files updated by another job: results/basecalling/merge_fastq/test_2.fastq, results/basecalling/merge_fastq/test_2.fastq.index, results/input/get_transcriptome/transcriptome_reference.fa, results/alignment/alignmemt_postfilter/test_2.bam
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_merge:
+    input: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_1.bam.bai, results/alignment/alignmemt_postfilter/control_2.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam.bai
+    output: results/alignment/alignmemt_merge/control.bam, results/alignment/alignmemt_merge/control.bam.bai
+    log: logs/alignment/alignmemt_merge/control.log
+    jobid: 44
+    reason: Missing output files: results/alignment/alignmemt_merge/control.bam; Input files updated by another job: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_1.bam.bai, results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/control_2.bam.bai, results/alignment/alignmemt_postfilter/control_3.bam.bai
+    wildcards: cond=control
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/control_0.fastq, results/basecalling/merge_fastq/control_0.fastq.index, results/alignment/alignmemt_postfilter/control_0.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/control_0_data.tsv, results/resquiggling/f5c_eventalign/control_0_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/control_0.log
+    jobid: 46
+    reason: Missing output files: results/resquiggling/f5c_eventalign/control_0_data.tsv, results/resquiggling/f5c_eventalign/control_0_summary.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/control_0.bam, results/input/get_transcriptome/transcriptome_reference.fa, results/basecalling/merge_fastq/control_0.fastq, results/basecalling/merge_fastq/control_0.fastq.index
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/test_3.fastq, results/basecalling/merge_fastq/test_3.fastq.index, results/alignment/alignmemt_postfilter/test_3.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/test_3_data.tsv, results/resquiggling/f5c_eventalign/test_3_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/test_3.log
+    jobid: 60
+    reason: Missing output files: results/resquiggling/f5c_eventalign/test_3_data.tsv, results/resquiggling/f5c_eventalign/test_3_summary.tsv; Input files updated by another job: results/basecalling/merge_fastq/test_3.fastq.index, results/basecalling/merge_fastq/test_3.fastq, results/input/get_transcriptome/transcriptome_reference.fa, results/alignment/alignmemt_postfilter/test_3.bam
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/control_1.fastq, results/basecalling/merge_fastq/control_1.fastq.index, results/alignment/alignmemt_postfilter/control_1.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/control_1_data.tsv, results/resquiggling/f5c_eventalign/control_1_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/control_1.log
+    jobid: 48
+    reason: Missing output files: results/resquiggling/f5c_eventalign/control_1_summary.tsv, results/resquiggling/f5c_eventalign/control_1_data.tsv; Input files updated by another job: results/basecalling/merge_fastq/control_1.fastq.index, results/alignment/alignmemt_postfilter/control_1.bam, results/basecalling/merge_fastq/control_1.fastq, results/input/get_transcriptome/transcriptome_reference.fa
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/control_2.fastq, results/basecalling/merge_fastq/control_2.fastq.index, results/alignment/alignmemt_postfilter/control_2.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/control_2_data.tsv, results/resquiggling/f5c_eventalign/control_2_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/control_2.log
+    jobid: 50
+    reason: Missing output files: results/resquiggling/f5c_eventalign/control_2_summary.tsv, results/resquiggling/f5c_eventalign/control_2_data.tsv; Input files updated by another job: results/basecalling/merge_fastq/control_2.fastq, results/input/get_transcriptome/transcriptome_reference.fa, results/basecalling/merge_fastq/control_2.fastq.index, results/alignment/alignmemt_postfilter/control_2.bam
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/control_3.fastq, results/basecalling/merge_fastq/control_3.fastq.index, results/alignment/alignmemt_postfilter/control_3.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/control_3_data.tsv, results/resquiggling/f5c_eventalign/control_3_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/control_3.log
+    jobid: 52
+    reason: Missing output files: results/resquiggling/f5c_eventalign/control_3_data.tsv, results/resquiggling/f5c_eventalign/control_3_summary.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/control_3.bam, results/basecalling/merge_fastq/control_3.fastq, results/input/get_transcriptome/transcriptome_reference.fa, results/basecalling/merge_fastq/control_3.fastq.index
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/test_0.fastq, results/basecalling/merge_fastq/test_0.fastq.index, results/alignment/alignmemt_postfilter/test_0.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/test_0_data.tsv, results/resquiggling/f5c_eventalign/test_0_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/test_0.log
+    jobid: 54
+    reason: Missing output files: results/resquiggling/f5c_eventalign/test_0_summary.tsv, results/resquiggling/f5c_eventalign/test_0_data.tsv; Input files updated by another job: results/alignment/alignmemt_postfilter/test_0.bam, results/basecalling/merge_fastq/test_0.fastq, results/input/get_transcriptome/transcriptome_reference.fa, results/basecalling/merge_fastq/test_0.fastq.index
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule alignmemt_merge:
+    input: results/alignment/alignmemt_postfilter/test_0.bam, results/alignment/alignmemt_postfilter/test_1.bam, results/alignment/alignmemt_postfilter/test_2.bam, results/alignment/alignmemt_postfilter/test_3.bam, results/alignment/alignmemt_postfilter/test_0.bam.bai, results/alignment/alignmemt_postfilter/test_1.bam.bai, results/alignment/alignmemt_postfilter/test_2.bam.bai, results/alignment/alignmemt_postfilter/test_3.bam.bai
+    output: results/alignment/alignmemt_merge/test.bam, results/alignment/alignmemt_merge/test.bam.bai
+    log: logs/alignment/alignmemt_merge/test.log
+    jobid: 45
+    reason: Missing output files: results/alignment/alignmemt_merge/test.bam; Input files updated by another job: results/alignment/alignmemt_postfilter/test_0.bam.bai, results/alignment/alignmemt_postfilter/test_1.bam.bai, results/alignment/alignmemt_postfilter/test_1.bam, results/alignment/alignmemt_postfilter/test_2.bam, results/alignment/alignmemt_postfilter/test_0.bam, results/alignment/alignmemt_postfilter/test_3.bam.bai, results/alignment/alignmemt_postfilter/test_2.bam.bai, results/alignment/alignmemt_postfilter/test_3.bam
+    wildcards: cond=test
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/control_0_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/control_0, results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/control_0.log
+    jobid: 72
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/control_0_data.tsv
+    wildcards: cond=control, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/control_2_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/control_2, results/nanocompore/nanocompore_eventalign_collapse/control_2/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_2/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/control_2.log
+    jobid: 74
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/control_2/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/control_2_data.tsv
+    wildcards: cond=control, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/test_0_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/test_0, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/test_0.log
+    jobid: 76
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/test_0_data.tsv
+    wildcards: cond=test, rep=0
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/test_2_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/test_2, results/nanocompore/nanocompore_eventalign_collapse/test_2/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_2/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/test_2.log
+    jobid: 78
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/test_2/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/test_2_data.tsv
+    wildcards: cond=test, rep=2
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/control_1_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/control_1, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/control_1.log
+    jobid: 73
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/control_1_data.tsv
+    wildcards: cond=control, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/control_3_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/control_3, results/nanocompore/nanocompore_eventalign_collapse/control_3/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_3/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/control_3.log
+    jobid: 75
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/control_3/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/control_3_data.tsv
+    wildcards: cond=control, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/test_1_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/test_1, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/test_1.log
+    jobid: 77
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/test_1_data.tsv
+    wildcards: cond=test, rep=1
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/test_3_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/test_3, results/nanocompore/nanocompore_eventalign_collapse/test_3/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_3/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/test_3.log
+    jobid: 79
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/test_3/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/test_3_data.tsv
+    wildcards: cond=test, rep=3
+    resources: tmpdir=/tmp, mem_mb=1000
+
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_sampcomp:
+    input: results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_2/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_3/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_2/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_3/out_eventalign_collapse.tsv, results/input/get_transcriptome/transcriptome_reference.fa
+    output: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv, results/nanocompore/nanocompore_sampcomp/outnanocompore_shift_stats.tsv, results/nanocompore/nanocompore_sampcomp/outSampComp.db
+    log: logs/nanocompore/nanocompore_sampcomp/sampcomp.log
+    jobid: 71
+    reason: Missing output files: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv; Input files updated by another job: results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_3/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_2/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_2/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/input/get_transcriptome/transcriptome_reference.fa, results/nanocompore/nanocompore_eventalign_collapse/control_3/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv
+    resources: tmpdir=/tmp, mem_mb=1000
+
+[Wed Nov 23 15:09:21 2022]
+rule nanocompore_postprocess:
+    input: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv, results/input/get_transcriptome/transcriptome_reference.fa
+    output: results/final/nanocompore_results_GMM_context_0.tsv, results/final/nanocompore_results_GMM_context_2.tsv, results/final/nanocompore_results_KS_dwell_context_0.tsv, results/final/nanocompore_results_KS_dwell_context_2.tsv, results/final/nanocompore_results_KS_intensity_context_0.tsv, results/final/nanocompore_results_KS_intensity_context_2.tsv
+    log: logs/nanocompore/nanocompore_postprocess/out.log
+    jobid: 70
+    reason: Missing output files: results/final/nanocompore_results_GMM_context_0.tsv, results/final/nanocompore_results_KS_intensity_context_2.tsv, results/final/nanocompore_results_KS_intensity_context_0.tsv, results/final/nanocompore_results_GMM_context_2.tsv, results/final/nanocompore_results_KS_dwell_context_2.tsv, results/final/nanocompore_results_KS_dwell_context_0.tsv; Input files updated by another job: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv, results/input/get_transcriptome/transcriptome_reference.fa
+    resources: tmpdir=/tmp, mem_mb=1000
+
+[Wed Nov 23 15:09:21 2022]
+localrule all:
+    input: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_2.bam, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_postfilter/test_0.bam, results/alignment/alignmemt_postfilter/test_1.bam, results/alignment/alignmemt_postfilter/test_2.bam, results/alignment/alignmemt_postfilter/test_3.bam, results/alignment/alignmemt_merge/control.bam, results/alignment/alignmemt_merge/test.bam, results/resquiggling/f5c_eventalign/control_0_data.tsv, results/resquiggling/f5c_eventalign/control_1_data.tsv, results/resquiggling/f5c_eventalign/control_2_data.tsv, results/resquiggling/f5c_eventalign/control_3_data.tsv, results/resquiggling/f5c_eventalign/test_0_data.tsv, results/resquiggling/f5c_eventalign/test_1_data.tsv, results/resquiggling/f5c_eventalign/test_2_data.tsv, results/resquiggling/f5c_eventalign/test_3_data.tsv, results/resquiggling/f5c_eventalign/control_0_summary.tsv, results/resquiggling/f5c_eventalign/control_1_summary.tsv, results/resquiggling/f5c_eventalign/control_2_summary.tsv, results/resquiggling/f5c_eventalign/control_3_summary.tsv, results/resquiggling/f5c_eventalign/test_0_summary.tsv, results/resquiggling/f5c_eventalign/test_1_summary.tsv, results/resquiggling/f5c_eventalign/test_2_summary.tsv, results/resquiggling/f5c_eventalign/test_3_summary.tsv, results/quality_control/pycoQC/pycoQC_control_0.json, results/quality_control/pycoQC/pycoQC_control_1.json, results/quality_control/pycoQC/pycoQC_control_2.json, results/quality_control/pycoQC/pycoQC_control_3.json, results/quality_control/pycoQC/pycoQC_test_0.json, results/quality_control/pycoQC/pycoQC_test_1.json, results/quality_control/pycoQC/pycoQC_test_2.json, results/quality_control/pycoQC/pycoQC_test_3.json, results/quality_control/pycoQC/pycoQC_control_0.html, results/quality_control/pycoQC/pycoQC_control_1.html, results/quality_control/pycoQC/pycoQC_control_2.html, results/quality_control/pycoQC/pycoQC_control_3.html, results/quality_control/pycoQC/pycoQC_test_0.html, results/quality_control/pycoQC/pycoQC_test_1.html, results/quality_control/pycoQC/pycoQC_test_2.html, results/quality_control/pycoQC/pycoQC_test_3.html, results/final/nanocompore_results_GMM_context_0.tsv, results/final/nanocompore_results_GMM_context_2.tsv, results/final/nanocompore_results_KS_dwell_context_0.tsv, results/final/nanocompore_results_KS_dwell_context_2.tsv, results/final/nanocompore_results_KS_intensity_context_0.tsv, results/final/nanocompore_results_KS_intensity_context_2.tsv
+    jobid: 0
+    reason: Input files updated by another job: results/quality_control/pycoQC/pycoQC_test_0.html, results/resquiggling/f5c_eventalign/control_0_summary.tsv, results/alignment/alignmemt_postfilter/test_0.bam, results/quality_control/pycoQC/pycoQC_test_1.html, results/quality_control/pycoQC/pycoQC_control_2.json, results/resquiggling/f5c_eventalign/test_1_summary.tsv, results/quality_control/pycoQC/pycoQC_control_0.html, results/alignment/alignmemt_postfilter/control_2.bam, results/resquiggling/f5c_eventalign/test_3_data.tsv, results/quality_control/pycoQC/pycoQC_control_1.json, results/resquiggling/f5c_eventalign/control_3_summary.tsv, results/quality_control/pycoQC/pycoQC_test_0.json, results/resquiggling/f5c_eventalign/control_0_data.tsv, results/quality_control/pycoQC/pycoQC_control_3.html, results/resquiggling/f5c_eventalign/control_2_data.tsv, results/alignment/alignmemt_postfilter/test_3.bam, results/quality_control/pycoQC/pycoQC_test_2.json, results/final/nanocompore_results_KS_dwell_context_2.tsv, results/final/nanocompore_results_KS_intensity_context_0.tsv, results/final/nanocompore_results_KS_dwell_context_0.tsv, results/quality_control/pycoQC/pycoQC_test_1.json, results/resquiggling/f5c_eventalign/test_1_data.tsv, results/quality_control/pycoQC/pycoQC_control_3.json, results/resquiggling/f5c_eventalign/test_2_data.tsv, results/alignment/alignmemt_postfilter/control_1.bam, results/resquiggling/f5c_eventalign/control_1_data.tsv, results/resquiggling/f5c_eventalign/test_0_data.tsv, results/resquiggling/f5c_eventalign/test_3_summary.tsv, results/quality_control/pycoQC/pycoQC_control_0.json, results/quality_control/pycoQC/pycoQC_test_3.html, results/final/nanocompore_results_KS_intensity_context_2.tsv, results/quality_control/pycoQC/pycoQC_test_2.html, results/quality_control/pycoQC/pycoQC_control_1.html, results/alignment/alignmemt_postfilter/test_1.bam, results/resquiggling/f5c_eventalign/test_0_summary.tsv, results/quality_control/pycoQC/pycoQC_control_2.html, results/resquiggling/f5c_eventalign/control_2_summary.tsv, results/alignment/alignmemt_postfilter/test_2.bam, results/resquiggling/f5c_eventalign/test_2_summary.tsv, results/final/nanocompore_results_GMM_context_0.tsv, results/alignment/alignmemt_postfilter/control_0.bam, results/resquiggling/f5c_eventalign/control_1_summary.tsv, results/quality_control/pycoQC/pycoQC_test_3.json, results/final/nanocompore_results_GMM_context_2.tsv, results/resquiggling/f5c_eventalign/control_3_data.tsv, results/alignment/alignmemt_postfilter/control_3.bam, results/alignment/alignmemt_merge/control.bam, results/alignment/alignmemt_merge/test.bam
+    resources: tmpdir=/tmp
+
+Job stats:
+job                                count    min threads    max threads
+-------------------------------  -------  -------------  -------------
+alignmemt_merge                        2              1              1
+alignmemt_postfilter                   8              1              1
+alignmemt_prefilter                    8              1              1
+all                                    1              1              1
+f5c_eventalign                         8              1              1
+f5c_index                              8              1              1
+get_transcriptome                      1              1              1
+merge_fastq                            8              1              1
+min_ref_coverage                       1              1              1
+minimap2_align                         8              1              1
+minimap2_index                         1              1              1
+nanocompore_eventalign_collapse        8              1              1
+nanocompore_postprocess                1              1              1
+nanocompore_sampcomp                   1              1              1
+ont_guppy                              8              1              1
+pycoQC                                 8              1              1
+total                                 80              1              1
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        alignmemt_merge, alignmemt_postfilter, alignmemt_prefilter, all, f5c_eventalign, f5c_index, merge_fastq, min_ref_coverage, minimap2_align, minimap2_index, nanocompore_eventalign_collapse, nanocompore_postprocess, nanocompore_sampcomp, pycoQC
+    missing output files:
+        alignmemt_merge, alignmemt_postfilter, alignmemt_prefilter, f5c_eventalign, f5c_index, get_transcriptome, merge_fastq, min_ref_coverage, minimap2_align, minimap2_index, nanocompore_eventalign_collapse, nanocompore_postprocess, nanocompore_sampcomp, ont_guppy, pycoQC
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.

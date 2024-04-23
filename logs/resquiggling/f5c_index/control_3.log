@@ -1,0 +1,10 @@
+[find_all_fast5] Looking for fast5 in /projects/ly_vu_direct_rna/results/nanopore/raw/F112872/PAM58460/basecalls/all
+[f5c_index_iop] 440 fast5 files found - took 0.182s
+[f5c_index_iop] Spawning 4 I/O processes to circumvent HDF hell
+[f5c_index_iop] Parallel indexing done - took 13690.344s
+[f5c_index_merge] Indexing merging done - took 15.796s.
+[readdb] num reads: 4397684, num reads with path to fast5: 4397684
+[main] Version: 0.6
+[main] CMD: f5c index --iop 4 -t 50 -d /projects/ly_vu_direct_rna/results/nanopore/raw/F112872/PAM58460/basecalls/all results/basecalling/merge_fastq/control_3.fastq
+[main] Real time: 13848.789 sec; CPU time: 1001.175 sec; Peak RAM: 1.365 GB
+

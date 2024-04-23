@@ -1,0 +1,36 @@
+Loading and checking configuration file
+Loading and checking sample file
+replicates found: [0, 1]
+condition found: ['control', 'test']
+Defining target files
+Defining target files for `quality_control` rules
+Defining target files for `nanocompore` rules
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+nanocompore_postprocess        1             30             30
+nanocompore_sampcomp           1             30             30
+total                          3              1             30
+
+Select jobs to execute...
+
+[Sun Dec 25 14:48:48 2022]
+rule nanocompore_sampcomp:
+    input: results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/input/get_transcriptome/transcriptome_reference.fa
+    output: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv, results/nanocompore/nanocompore_sampcomp/outnanocompore_shift_stats.tsv, results/nanocompore/nanocompore_sampcomp/outSampComp.db
+    log: logs/nanocompore/nanocompore_sampcomp/sampcomp.log
+    jobid: 39
+    reason: Missing output files: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv
+    threads: 30
+    resources: tmpdir=/var/tmp, mem_mb=10000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/cc51170f231d96215396cdf3077daf96.simg
+slurmstepd: error: Job 38788538 exceeded memory limit (125783032 > 14680064), being killed
+slurmstepd: error: *** JOB 38788538 ON n115 CANCELLED AT 2022-12-25T14:52:32 ***
+slurmstepd: error: Exceeded job memory limit
+Will exit after finishing currently running jobs (scheduler).

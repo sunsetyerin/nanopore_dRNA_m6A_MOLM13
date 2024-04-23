@@ -1,0 +1,21 @@
+timestamp: 2023-01-26 15:43:57.512527
+	input_tsv: /projects/ly_vu_direct_rna/MetaCompore/results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv
+
+	fasta: /projects/ly_vu_direct_rna/MetaCompore/results/input/get_transcriptome/transcriptome_reference.fa
+
+	outdir: /projects/ly_vu_direct_rna/MetaCompore/results/final2
+
+	log: /projects/ly_vu_direct_rna/MetaCompore/logs/nanocompore/nanocompore_postprocess/out_retry.log
+
+	p_val_lim: 0.01
+
+	quantile_lim: 0.5
+
+	min_distance: 9
+
+Load Fasta reference lengths
+
+Load and cleanup data
+
+Iterate over transcripts and call peaks
+

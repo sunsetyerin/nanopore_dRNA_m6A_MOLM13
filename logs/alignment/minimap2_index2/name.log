@@ -1,0 +1,8 @@
+[M::mm_idx_gen::12.994*1.70] collected minimizers
+[M::mm_idx_gen::14.665*2.96] sorted minimizers
+[M::main::16.508*2.74] loaded/built the index for 246511 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 246511
+[M::mm_idx_stat::16.769*2.72] distinct minimizers: 20594185 (42.37% are singletons); average occurrences: 3.756; average spacing: 5.398
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -t 50 -d results/alignment/minimap2_index2/transcriptome_reference.mmi /projects/ly_vu_direct_rna/MetaCompore/results/input/get_transcriptome/nanocompore_reference_transcriptome.fa
+[M::main] Real time: 19.137 sec; CPU: 46.275 sec; Peak RSS: 3.002 GB

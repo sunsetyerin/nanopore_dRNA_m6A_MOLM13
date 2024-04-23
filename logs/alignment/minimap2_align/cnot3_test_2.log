@@ -1,0 +1,23 @@
+[M::main::10.908*0.62] loaded/built the index for 246511 target sequence(s)
+[M::mm_mapopt_update::11.789*0.65] mid_occ = 121
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 246511
+[M::mm_idx_stat::12.163*0.66] distinct minimizers: 20594185 (42.37% are singletons); average occurrences: 3.756; average spacing: 5.398
+[M::worker_pipeline::92.473*32.18] mapped 447352 sequences
+[M::worker_pipeline::163.811*25.25] mapped 454569 sequences
+[M::worker_pipeline::231.299*22.65] mapped 482874 sequences
+[M::worker_pipeline::295.911*21.45] mapped 462090 sequences
+[M::worker_pipeline::357.084*20.91] mapped 442892 sequences
+[M::worker_pipeline::416.622*20.49] mapped 435076 sequences
+[M::worker_pipeline::478.253*20.10] mapped 433141 sequences
+[M::worker_pipeline::539.050*19.80] mapped 431047 sequences
+[M::worker_pipeline::602.752*19.45] mapped 429367 sequences
+[M::worker_pipeline::666.334*19.21] mapped 432384 sequences
+[M::worker_pipeline::733.329*18.90] mapped 429768 sequences
+[M::worker_pipeline::796.877*18.74] mapped 432404 sequences
+[M::worker_pipeline::847.543*18.90] mapped 432626 sequences
+[M::worker_pipeline::911.458*18.18] mapped 434674 sequences
+[M::worker_pipeline::941.319*17.61] mapped 213756 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -t 100 -a -L -x map-ont results/alignment/minimap2_index2/transcriptome_reference.mmi results/basecalling/merge_fastq/cnot3_test_2.fastq
+[M::main] Real time: 942.060 sec; CPU: 16574.898 sec; Peak RSS: 8.531 GB
+[bam_sort_core] merging from 27 files and 1 in-memory blocks...

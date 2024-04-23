@@ -1,0 +1,191 @@
+Loading and checking configuration file
+Loading and checking sample file
+replicates found: [0, 1]
+condition found: ['control', 'test']
+Defining target files
+Defining target files for `quality_control` rules
+Defining target files for `nanocompore` rules
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 15
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                count    min threads    max threads
+-------------------------------  -------  -------------  -------------
+alignmemt_merge                        1             15             15
+all                                    1              1              1
+f5c_eventalign                         4             15             15
+nanocompore_eventalign_collapse        4             15             15
+nanocompore_postprocess                1             15             15
+nanocompore_sampcomp                   1             15             15
+total                                 12              1             15
+
+Select jobs to execute...
+
+[Fri Dec  2 13:55:19 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/control_0.fastq, results/basecalling/merge_fastq/control_0.fastq.index, results/alignment/alignmemt_postfilter/control_0.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/control_0_data.tsv, results/resquiggling/f5c_eventalign/control_0_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/control_0.log
+    jobid: 26
+    reason: Missing output files: results/resquiggling/f5c_eventalign/control_0_data.tsv, results/resquiggling/f5c_eventalign/control_0_summary.tsv
+    wildcards: cond=control, rep=0
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/f8ca3bd66a49223e1d1502ff8b4fc8be.simg
+[Sun Dec  4 22:39:39 2022]
+Finished job 26.
+1 of 12 steps (8%) done
+Select jobs to execute...
+
+[Sun Dec  4 22:39:42 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/control_0_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/control_0, results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/control_0.log
+    jobid: 40
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/control_0_data.tsv
+    wildcards: cond=control, rep=0
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/cc51170f231d96215396cdf3077daf96.simg
+[Wed Dec  7 03:09:06 2022]
+Finished job 40.
+2 of 12 steps (17%) done
+Select jobs to execute...
+
+[Wed Dec  7 03:09:10 2022]
+rule alignmemt_merge:
+    input: results/alignment/alignmemt_postfilter/control_0.bam, results/alignment/alignmemt_postfilter/control_1.bam, results/alignment/alignmemt_postfilter/control_0.bam.bai, results/alignment/alignmemt_postfilter/control_1.bam.bai
+    output: results/alignment/alignmemt_merge/control.bam, results/alignment/alignmemt_merge/control.bam.bai
+    log: logs/alignment/alignmemt_merge/control.log
+    jobid: 24
+    reason: Missing output files: results/alignment/alignmemt_merge/control.bam
+    wildcards: cond=control
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=1000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/6c4e21adffd72a748cebf3535bb54928.simg
+[Wed Dec  7 03:11:27 2022]
+Finished job 24.
+3 of 12 steps (25%) done
+Select jobs to execute...
+
+[Wed Dec  7 03:11:27 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/test_0.fastq, results/basecalling/merge_fastq/test_0.fastq.index, results/alignment/alignmemt_postfilter/test_0.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/test_0_data.tsv, results/resquiggling/f5c_eventalign/test_0_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/test_0.log
+    jobid: 30
+    reason: Missing output files: results/resquiggling/f5c_eventalign/test_0_data.tsv, results/resquiggling/f5c_eventalign/test_0_summary.tsv
+    wildcards: cond=test, rep=0
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/f8ca3bd66a49223e1d1502ff8b4fc8be.simg
+[Sun Dec 11 02:06:27 2022]
+Finished job 30.
+4 of 12 steps (33%) done
+Select jobs to execute...
+
+[Sun Dec 11 02:06:32 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/test_0_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/test_0, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/test_0.log
+    jobid: 42
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/test_0_data.tsv
+    wildcards: cond=test, rep=0
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/cc51170f231d96215396cdf3077daf96.simg
+[Tue Dec 13 17:54:06 2022]
+Finished job 42.
+5 of 12 steps (42%) done
+Select jobs to execute...
+
+[Tue Dec 13 17:54:08 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/test_1.fastq, results/basecalling/merge_fastq/test_1.fastq.index, results/alignment/alignmemt_postfilter/test_1.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/test_1_data.tsv, results/resquiggling/f5c_eventalign/test_1_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/test_1.log
+    jobid: 32
+    reason: Missing output files: results/resquiggling/f5c_eventalign/test_1_data.tsv, results/resquiggling/f5c_eventalign/test_1_summary.tsv
+    wildcards: cond=test, rep=1
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/f8ca3bd66a49223e1d1502ff8b4fc8be.simg
+[Sat Dec 17 06:38:33 2022]
+Finished job 32.
+6 of 12 steps (50%) done
+Select jobs to execute...
+
+[Sat Dec 17 06:38:37 2022]
+rule f5c_eventalign:
+    input: results/basecalling/merge_fastq/control_1.fastq, results/basecalling/merge_fastq/control_1.fastq.index, results/alignment/alignmemt_postfilter/control_1.bam, results/input/get_transcriptome/transcriptome_reference.fa, resources/f5c/r9.4_70bps.u_to_t_rna.5mer.template.model
+    output: results/resquiggling/f5c_eventalign/control_1_data.tsv, results/resquiggling/f5c_eventalign/control_1_summary.tsv
+    log: logs/resquiggling/f5c_eventalign/control_1.log
+    jobid: 28
+    reason: Missing output files: results/resquiggling/f5c_eventalign/control_1_summary.tsv, results/resquiggling/f5c_eventalign/control_1_data.tsv
+    wildcards: cond=control, rep=1
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/f8ca3bd66a49223e1d1502ff8b4fc8be.simg
+[Mon Dec 19 08:36:21 2022]
+Finished job 28.
+7 of 12 steps (58%) done
+Select jobs to execute...
+
+[Mon Dec 19 08:36:26 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/control_1_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/control_1, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/control_1.log
+    jobid: 41
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/control_1_data.tsv
+    wildcards: cond=control, rep=1
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/cc51170f231d96215396cdf3077daf96.simg
+[Tue Dec 20 13:08:28 2022]
+Finished job 41.
+8 of 12 steps (67%) done
+Select jobs to execute...
+
+[Tue Dec 20 13:08:28 2022]
+rule nanocompore_eventalign_collapse:
+    input: results/resquiggling/f5c_eventalign/test_1_data.tsv
+    output: results/nanocompore/nanocompore_eventalign_collapse/test_1, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv.idx
+    log: logs/nanocompore/nanocompore_eventalign_collapse/test_1.log
+    jobid: 43
+    reason: Missing output files: results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv; Input files updated by another job: results/resquiggling/f5c_eventalign/test_1_data.tsv
+    wildcards: cond=test, rep=1
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/cc51170f231d96215396cdf3077daf96.simg
+[Thu Dec 22 07:14:33 2022]
+Finished job 43.
+9 of 12 steps (75%) done
+Select jobs to execute...
+
+[Thu Dec 22 07:14:33 2022]
+rule nanocompore_sampcomp:
+    input: results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/input/get_transcriptome/transcriptome_reference.fa
+    output: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv, results/nanocompore/nanocompore_sampcomp/outnanocompore_shift_stats.tsv, results/nanocompore/nanocompore_sampcomp/outSampComp.db
+    log: logs/nanocompore/nanocompore_sampcomp/sampcomp.log
+    jobid: 39
+    reason: Missing output files: results/nanocompore/nanocompore_sampcomp/outnanocompore_results.tsv; Input files updated by another job: results/nanocompore/nanocompore_eventalign_collapse/control_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_1/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/test_0/out_eventalign_collapse.tsv, results/nanocompore/nanocompore_eventalign_collapse/control_0/out_eventalign_collapse.tsv
+    threads: 15
+    resources: tmpdir=/var/tmp, mem_mb=64000
+
+Activating singularity image /projects/ly_vu_direct_rna/MetaCompore/.snakemake/singularity/cc51170f231d96215396cdf3077daf96.simg
+slurmstepd: error: Job 38022156 exceeded memory limit (251433720 > 57344000), being killed
+slurmstepd: error: *** JOB 38022156 ON n207 CANCELLED AT 2022-12-22T07:18:44 ***
+Will exit after finishing currently running jobs (scheduler).
